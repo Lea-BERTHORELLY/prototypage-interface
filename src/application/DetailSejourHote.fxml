@@ -20,23 +20,23 @@
             <Image url="@../../../../OneDrive/M1/S2/Prototypage%20et%20interface%20utilisateur/avignon.png" />
          </image>
       </ImageView>
-      <Text layoutX="580.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proposez votre séjour">
+      <Text layoutX="10.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proposez votre séjour" textAlignment="CENTER" wrappingWidth="1280.875">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="149.0" layoutY="173.0" />
-      <TextField layoutX="156.0" layoutY="394.0" prefHeight="31.0" prefWidth="539.0" />
-      <TextField layoutX="223.0" layoutY="469.0" prefHeight="31.0" prefWidth="38.0" />
-      <Button layoutX="1133.0" layoutY="606.0" mnemonicParsing="false" text="Valider" />
+      <TextField layoutX="149.0" layoutY="179.0" />
+      <TextField layoutX="157.0" layoutY="404.0" prefHeight="31.0" prefWidth="539.0" />
+      <TextField layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
+      <Button layoutX="1053.0" layoutY="554.0" mnemonicParsing="false" text="Valider" />
       <CheckBox layoutX="163.0" layoutY="559.0" mnemonicParsing="false" text="Petit déjeuner" />
       <CheckBox layoutX="304.0" layoutY="559.0" mnemonicParsing="false" text="Demi-pension" />
       <CheckBox layoutX="448.0" layoutY="559.0" mnemonicParsing="false" text="Pension complète" />
-      <CheckBox layoutX="150.0" layoutY="334.0" mnemonicParsing="false" text="Jardinage" />
+      <CheckBox layoutX="149.0" layoutY="334.0" mnemonicParsing="false" text="Jardinage" />
       <CheckBox layoutX="258.0" layoutY="334.0" mnemonicParsing="false" text="Bricolage" />
       <CheckBox layoutX="365.0" layoutY="334.0" mnemonicParsing="false" text="Cuisine" />
       <TextField layoutX="463.0" layoutY="329.0" text="Autre" />
-      <DatePicker layoutX="152.0" layoutY="254.0" />
+      <DatePicker layoutX="149.0" layoutY="254.0" />
       <DatePicker layoutX="403.0" layoutY="254.0" />
    </children>
 </AnchorPane>
