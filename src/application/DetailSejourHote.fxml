@@ -28,7 +28,7 @@
       <TextField layoutX="223.0" layoutY="149.0" />
       <TextField layoutX="223.0" layoutY="424.0" prefHeight="31.0" prefWidth="552.0" />
       <TextField layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
-      <Button fx:id="btnValiderSejourHote" layoutX="1104.0" layoutY="592.0" mnemonicParsing="false" onAction="#validerSejourHote" text="Valider" />
+      <Button fx:id="btnValiderSejourHote" layoutX="1075.0" layoutY="649.0" mnemonicParsing="false" onAction="#validerSejourHote" text="Valider" />
       <CheckBox layoutX="223.0" layoutY="539.0" mnemonicParsing="false" text="Petit déjeuner" />
       <CheckBox layoutX="372.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
       <CheckBox layoutX="514.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
@@ -52,5 +52,6 @@
       <CheckBox layoutX="223.0" layoutY="649.0" mnemonicParsing="false" text="Oui" />
       <CheckBox layoutX="288.0" layoutY="649.0" mnemonicParsing="false" text="Non" />
       <TextField layoutX="608.0" layoutY="589.0" prefHeight="31.0" prefWidth="164.0" text="Autre" />
+      <Button fx:id="btnConcept" layoutX="956.0" layoutY="649.0" mnemonicParsing="false" onAction="#concept" text="Concept" />
    </children>
 </AnchorPane>

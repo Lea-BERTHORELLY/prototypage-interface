@@ -11,6 +11,9 @@ public class DetailSejourHoteController {
 	
 	@FXML
 	private Button btnValiderSejourHote;
+	
+	@FXML
+	private Button btnConcept;
 
 	public void validerSejourHote() {
 		Scene scene = btnValiderSejourHote.getScene();
@@ -22,5 +25,15 @@ public class DetailSejourHoteController {
 			e.printStackTrace();
 		}
 	}
+	
+	public void concept() {
+		Scene scene = btnConcept.getScene();
+		try {
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ConceptAdeona.fxml"));
+			scene.setRoot(root);
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
-

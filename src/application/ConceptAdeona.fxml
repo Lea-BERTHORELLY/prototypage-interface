@@ -15,23 +15,28 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="203.0" layoutX="167.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="957.0" />
-      <Text layoutX="307.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adeona est une plateforme d’échange et de volontariat nomade. ">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="203.0" layoutX="167.0" layoutY="390.0" stroke="BLACK" strokeType="INSIDE" width="957.0" />
+      <Text layoutX="307.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adeona est une plateforme d’échange et de volontariat nomade. ">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="179.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Elle permet à un utilisateur d’organiser un séjour chez un hôte en échange deservices :">
+      <Text layoutX="179.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Elle permet à un utilisateur d’organiser un séjour chez un hôte en échange deservices :">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="206.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jardinage, bricolage, cuisine, formation, soutien scolaire, garde d’enfants, lecture…">
+      <Text layoutX="206.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jardinage, bricolage, cuisine, formation, soutien scolaire, garde d’enfants, lecture…">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="btnProposerSejour" layoutX="455.0" layoutY="464.0" mnemonicParsing="false" onAction="#proposerSejour" text="Proposer un séjour" />
-   	  <Button fx:id="btnVoirSejour" layoutX="673.0" layoutY="464.0" mnemonicParsing="false" onAction="#voirSejour" text="Voir vos séjours" />
+      <Button fx:id="btnProposerSejour" layoutX="455.0" layoutY="628.0" mnemonicParsing="false" onAction="#proposerSejour" text="Proposer un séjour" />
+   	  <Button fx:id="btnVoirSejour" layoutX="673.0" layoutY="628.0" mnemonicParsing="false" onAction="#voirSejour" text="Voir vos séjours" />
+      <ImageView fitHeight="203.0" fitWidth="919.0" layoutX="463.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../OneDrive/M1/S2/Prototypage%20et%20interface%20utilisateur/nomade.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
