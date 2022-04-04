@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConceptAdeonaController">
+   <children>
+      <Text layoutX="10.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concept d'Adeona" textAlignment="CENTER" wrappingWidth="1280.875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="203.0" layoutX="167.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="957.0" />
+      <Text layoutX="307.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adeona est une plateforme d’échange et de volontariat nomade. ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="179.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Elle permet à un utilisateur d’organiser un séjour chez un hôte en échange deservices :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="206.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jardinage, bricolage, cuisine, formation, soutien scolaire, garde d’enfants, lecture…">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnProposerSejour" layoutX="455.0" layoutY="464.0" mnemonicParsing="false" onAction="#proposerSejour" text="Proposer un séjour" />
+   	  <Button fx:id="btnVoirSejour" layoutX="673.0" layoutY="464.0" mnemonicParsing="false" onAction="#voirSejour" text="Voir vos séjours" />
+   </children>
+</AnchorPane>
