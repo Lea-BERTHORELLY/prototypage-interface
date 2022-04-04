@@ -30,8 +30,8 @@
       <TextField layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
       <Button fx:id="btnValiderSejourHote" layoutX="1104.0" layoutY="592.0" mnemonicParsing="false" onAction="#validerSejourHote" text="Valider" />
       <CheckBox layoutX="223.0" layoutY="539.0" mnemonicParsing="false" text="Petit déjeuner" />
-      <CheckBox layoutX="362.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
-      <CheckBox layoutX="499.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
+      <CheckBox layoutX="372.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
+      <CheckBox layoutX="514.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
       <CheckBox layoutX="223.0" layoutY="319.0" mnemonicParsing="false" text="Jardinage" />
       <CheckBox layoutX="324.0" layoutY="319.0" mnemonicParsing="false" text="Bricolage" />
       <CheckBox layoutX="423.0" layoutY="319.0" mnemonicParsing="false" text="Cuisine" />
@@ -44,13 +44,13 @@
       <Text layoutX="50.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type logement :" />
       <CheckBox layoutX="223.0" layoutY="594.0" mnemonicParsing="false" text="Balade à cheval" />
       <CheckBox layoutX="373.0" layoutY="594.0" mnemonicParsing="false" text="Blanchissage" />
-      <CheckBox layoutX="498.0" layoutY="594.0" mnemonicParsing="false" text="Piscine" />
+      <CheckBox layoutX="514.0" layoutY="594.0" mnemonicParsing="false" text="Piscine" />
       <CheckBox layoutX="223.0" layoutY="264.0" mnemonicParsing="false" text="Cabane" />
       <CheckBox layoutX="324.0" layoutY="264.0" mnemonicParsing="false" text="Chambre" />
       <TextField layoutX="423.0" layoutY="259.0" text="Autre" />
       <Text layoutX="50.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert :" />
       <CheckBox layoutX="223.0" layoutY="649.0" mnemonicParsing="false" text="Oui" />
       <CheckBox layoutX="288.0" layoutY="649.0" mnemonicParsing="false" text="Non" />
-      <TextField layoutX="587.0" layoutY="589.0" text="Autre" />
+      <TextField layoutX="608.0" layoutY="589.0" prefHeight="31.0" prefWidth="164.0" text="Autre" />
    </children>
 </AnchorPane>
