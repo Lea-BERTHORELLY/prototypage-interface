@@ -25,33 +25,40 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="223.0" layoutY="149.0" />
-      <TextField layoutX="223.0" layoutY="424.0" prefHeight="31.0" prefWidth="552.0" />
-      <TextField layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
+      <TextField fx:id="localisation" layoutX="223.0" layoutY="149.0" />
+      <TextField fx:id="contrainte" layoutX="223.0" layoutY="424.0" prefHeight="31.0" prefWidth="552.0" />
+      <TextField fx:id="nbVoyageur" layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
       <Button fx:id="btnValiderSejourHote" layoutX="1075.0" layoutY="649.0" mnemonicParsing="false" onAction="#validerSejourHote" text="Valider" />
-      <CheckBox layoutX="223.0" layoutY="539.0" mnemonicParsing="false" text="Petit déjeuner" />
-      <CheckBox layoutX="372.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
-      <CheckBox layoutX="514.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
-      <CheckBox layoutX="223.0" layoutY="319.0" mnemonicParsing="false" text="Jardinage" />
-      <CheckBox layoutX="324.0" layoutY="319.0" mnemonicParsing="false" text="Bricolage" />
-      <CheckBox layoutX="423.0" layoutY="319.0" mnemonicParsing="false" text="Cuisine" />
-      <TextField layoutX="514.0" layoutY="314.0" text="Autre" />
-      <DatePicker layoutX="223.0" layoutY="204.0" />
-      <DatePicker layoutX="498.0" layoutY="204.0" />
-      <TextField layoutX="223.0" layoutY="368.0" prefHeight="31.0" prefWidth="38.0" />
+      <CheckBox fx:id="petitDej" layoutX="223.0" layoutY="539.0" mnemonicParsing="false" text="Petit déjeuner" />
+      <CheckBox fx:id="demiPension" layoutX="372.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
+      <CheckBox fx:id="pensionComplete" layoutX="514.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
+      <CheckBox fx:id="jardinage" layoutX="223.0" layoutY="319.0" mnemonicParsing="false" text="Jardinage" />
+      <CheckBox fx:id="bricolage" layoutX="324.0" layoutY="319.0" mnemonicParsing="false" text="Bricolage" />
+      <CheckBox fx:id="cuisine" layoutX="423.0" layoutY="319.0" mnemonicParsing="false" text="Cuisine" />
+      <TextField fx:id="serviceAutre" layoutX="514.0" layoutY="314.0" text="Autre" />
+      <DatePicker fx:id="periodeDeb" layoutX="223.0" layoutY="204.0" />
+      <DatePicker fx:id="periodeFin" layoutX="498.0" layoutY="204.0" />
+      <TextField fx:id="dureeQuotidienne" layoutX="223.0" layoutY="368.0" prefHeight="31.0" prefWidth="38.0" />
       <Text layoutX="50.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée quotidienne (h) :" />
       <Text layoutX="50.0" layoutY="610.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrepartie(s) :" />
       <Text layoutX="50.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type logement :" />
-      <CheckBox layoutX="223.0" layoutY="594.0" mnemonicParsing="false" text="Balade à cheval" />
-      <CheckBox layoutX="373.0" layoutY="594.0" mnemonicParsing="false" text="Blanchissage" />
-      <CheckBox layoutX="514.0" layoutY="594.0" mnemonicParsing="false" text="Piscine" />
-      <CheckBox layoutX="223.0" layoutY="264.0" mnemonicParsing="false" text="Cabane" />
-      <CheckBox layoutX="324.0" layoutY="264.0" mnemonicParsing="false" text="Chambre" />
-      <TextField layoutX="423.0" layoutY="259.0" text="Autre" />
+      <CheckBox fx:id="baladeCheval" layoutX="223.0" layoutY="594.0" mnemonicParsing="false" text="Balade à cheval" />
+      <CheckBox fx:id="blanchissage" layoutX="373.0" layoutY="594.0" mnemonicParsing="false" text="Blanchissage" />
+      <CheckBox fx:id="piscine" layoutX="514.0" layoutY="594.0" mnemonicParsing="false" text="Piscine" />
+      <CheckBox fx:id="cabane" layoutX="223.0" layoutY="264.0" mnemonicParsing="false" text="Cabane" />
+      <CheckBox fx:id="chambre" layoutX="324.0" layoutY="264.0" mnemonicParsing="false" text="Chambre" />
+      <TextField fx:id="logementAutre" layoutX="423.0" layoutY="259.0" text="Autre" />
       <Text layoutX="50.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert :" />
-      <CheckBox layoutX="223.0" layoutY="649.0" mnemonicParsing="false" text="Oui" />
-      <CheckBox layoutX="288.0" layoutY="649.0" mnemonicParsing="false" text="Non" />
-      <TextField layoutX="608.0" layoutY="589.0" prefHeight="31.0" prefWidth="164.0" text="Autre" />
+      <CheckBox fx:id="transfertOui" layoutX="223.0" layoutY="649.0" mnemonicParsing="false" text="Oui" />
+      <CheckBox fx:id="transfertNon" layoutX="288.0" layoutY="649.0" mnemonicParsing="false" text="Non" />
+      <TextField fx:id="contrepartieAutre" layoutX="608.0" layoutY="589.0" prefHeight="31.0" prefWidth="164.0" text="Autre" />
       <Button fx:id="btnConcept" layoutX="956.0" layoutY="649.0" mnemonicParsing="false" onAction="#concept" text="Concept" />
    </children>
+   <!-- 
+   <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">
+     <children>
+        <Label layoutX="14.0" layoutY="15.0" text="Contact : adeona@woofing.fr" />
+     </children>
+   </Pane>
+    -->
 </AnchorPane>
