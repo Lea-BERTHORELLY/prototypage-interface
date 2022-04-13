@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="180.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
 
-    <HBox prefHeight="153.0" prefWidth="589.0" spacing="20.0">
+    <HBox layoutX="5.0" layoutY="5.0" prefHeight="153.0" prefWidth="589.0" spacing="20.0">
         <children>
             <ImageView fitHeight="151.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" />
             <VBox prefHeight="153.0" prefWidth="453.0">
@@ -37,5 +37,8 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
         </padding>
     </HBox>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 
 </AnchorPane>

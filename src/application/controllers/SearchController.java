@@ -49,10 +49,14 @@ public class SearchController implements Initializable {
             }
         }
 
-        // initialize effects
+        // todo: initialize effects
         for (int i=0; i<nodes.length;i++){
 
         }
+
+        // todo: bind data
+
+        // todo: link to tripView
 
         // set map
         File file = new File("src/application/assets/map.jpg");
