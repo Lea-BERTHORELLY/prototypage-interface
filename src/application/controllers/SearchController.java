@@ -1,6 +1,8 @@
 package application.controllers;
 
 import application.Main;
+import application.models.Voyage;
+import com.opencsv.bean.CsvToBeanBuilder;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,8 +12,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
@@ -21,8 +26,13 @@ public class SearchController implements Initializable {
     @FXML
     private ImageView map;
 
+    private List<Voyage> listVoyages;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // bind data voyages
+        listVoyages = this.getAllVoyages();
 
         Node[] nodes = new Node[4];
         int activeNodeIndex = 0;
@@ -63,5 +73,22 @@ public class SearchController implements Initializable {
         Image image = new Image(file.toURI().toString());
         map.setImage(image);
 
+    }
+
+    public List<Voyage> getAllVoyages(){
+        String fileName = "src/application/assets/voyages.csv";
+
+        List<Voyage> voyages = null;
+        try {
+            voyages = new CsvToBeanBuilder(new FileReader(fileName)).withSeparator(';')
+                    .withType(Voyage.class)
+                    .build()
+                    .parse();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+//        for (Voyage v: voyages) {System.out.println(v.getVille() + " : " + v.getContreparties());}
+        return voyages;
     }
 }
