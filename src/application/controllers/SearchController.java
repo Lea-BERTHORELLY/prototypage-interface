@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -34,7 +35,7 @@ public class SearchController implements Initializable {
         // bind data voyages
         listVoyages = this.getAllVoyages();
 
-        Node[] nodes = new Node[4];
+        Node[] nodes = new Node[20];
         int activeNodeIndex = 0;
 
         // initialize graphics
@@ -43,6 +44,22 @@ public class SearchController implements Initializable {
                 final int j=i;
                 nodes[i] = FXMLLoader.load(Main.class.getResource("views/trip-card-view.fxml"));
                 nodes[i].setStyle("-fx-border-color: lightgrey");
+
+                // bind data
+                ImageView iv = (ImageView) nodes[i].lookup("#image");
+                Label titre = (Label) nodes[i].lookup("#titre");
+                Label contrepartie = (Label) nodes[i].lookup("#contrepartie");
+                Label logement = (Label) nodes[i].lookup("#logement");
+                Label heures = (Label) nodes[i].lookup("#heures");
+
+                File file = new File("src/application/assets/images/"+ listVoyages.get(i).getVille() +".png");
+                Image image = new Image(file.toURI().toString());
+                iv.setImage(image);
+                titre.setText(listVoyages.get(i).getContreparties() + " à " + listVoyages.get(i).getVille());
+                contrepartie.setText(listVoyages.get(i).getContreparties());
+                logement.setText(listVoyages.get(i).getType());
+                heures.setText(listVoyages.get(i).getHeure() + " h/j");
+
 
                 // add some effect
                 nodes[i].setOnMouseEntered(event -> {
