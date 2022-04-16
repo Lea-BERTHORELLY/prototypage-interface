@@ -22,9 +22,10 @@
             <DatePicker fx:id="debut_sejour" layoutX="340.0" layoutY="32.0" promptText="Début du séjour" />
             <DatePicker fx:id="fin_sejour" layoutX="570.0" layoutY="32.0" promptText="Fin du séjour" />
             <Button fx:id="rechercher" layoutX="872.0" layoutY="32.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Rechercher" />
-            <TextField fx:id="txtf_rechercher_voyage" layoutX="52.0" layoutY="32.0" promptText="Rechercher" />
+            <TextField fx:id="txtDestination" layoutX="52.0" layoutY="32.0" promptText="Destination" />
             <Text fx:id="txtWarning" fill="RED" layoutX="52.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez saisir au moins 2 caractères" visible="false" wrappingWidth="249.13671875" />
-         </children></Pane>
+         </children>
+      </Pane>
       <Label layoutX="372.0" layoutY="69.0" text="La plateforme d'échange et de volontariat nomade">
          <font>
             <Font size="24.0" />

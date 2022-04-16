@@ -5,10 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import application.controllers.SearchController;
@@ -35,7 +32,7 @@ import javafx.stage.Stage;
 
 public class AccueilController implements Initializable{
 	@FXML private Pane contact;
-	@FXML private TextField txtf_rechercher_voyage;
+	@FXML private TextField txtDestination;
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
 	@FXML private Text txtWarning;
@@ -54,14 +51,17 @@ public class AccueilController implements Initializable{
 
 	@FXML
 	protected void onSearchButtonClick(ActionEvent event) throws IOException {
-		if (txtf_rechercher_voyage.getText().length() > 1) {
+		if (txtDestination.getText().length() > 1) {
 			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/search-view.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
-
-			SearchController controller = (SearchController)fxmlLoader.getController();
+			SearchController searchController = (SearchController)fxmlLoader.getController();
 			listVoyagesResults = searchVoyagesResults();
-			controller.setListVoyages(listVoyagesResults);
-			controller.init();
+			searchController.setListAllVoyages(listAllVoyages);
+			searchController.setListVoyagesResults(listVoyagesResults);
+			searchController.setTxtDestination2(txtDestination);
+			searchController.setDebut_sejour2(debut_sejour);
+			searchController.setFin_sejour2(fin_sejour);
+			searchController.init();
 
 			Scene scene = new Scene(root);
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -91,19 +91,19 @@ public class AccueilController implements Initializable{
 	}
 
 	public ArrayList<Voyage> searchVoyagesResults(){
-		System.out.println(this.txtf_rechercher_voyage.getText());
+		System.out.println(this.txtDestination.getText());
 		if (debut_sejour.getValue() != null)	System.out.println(this.debut_sejour.getValue());
 		if (fin_sejour.getValue() != null)	System.out.println(this.fin_sejour.getValue());
 
 		// FOR DEMO: if input= "all", results if all 10000 voyages
-		if (txtf_rechercher_voyage.getText().equals("all")){
+		if (txtDestination.getText().equals("all")){
 			return this.listAllVoyages;
 		}
 
 		ArrayList<Voyage> results = new ArrayList<Voyage>();
 
 		for (Voyage v: listAllVoyages){
-			if ((v.getVille().contains(txtf_rechercher_voyage.getText()) || v.getContreparties().contains(txtf_rechercher_voyage.getText()))
+			if ((v.getVille().contains(txtDestination.getText()) || v.getContreparties().contains(txtDestination.getText()))
 					&& (debut_sejour.getValue() == null || !debut_sejour.getValue().isBefore(LocalDate.parse(v.getDateArrivee())) )
 					&& (fin_sejour.getValue() == null || !fin_sejour.getValue().isAfter(LocalDate.parse(v.getDateDepart())) ) ){
 				results.add(v);
@@ -111,7 +111,6 @@ public class AccueilController implements Initializable{
 		}
 		System.out.println(results.size());
 		return results;
-
 	}
 
 	public void displayWarning(){
@@ -127,6 +126,5 @@ public class AccueilController implements Initializable{
 
 	//todo: tous les champs d'informations (logement,etc) pour la recherche
 	//todo: afficher sejour 20 par 20
-	//todo: deporter recherche vers SearchController
 
 }
