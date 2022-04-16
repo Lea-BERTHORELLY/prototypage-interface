@@ -5,7 +5,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
@@ -29,46 +29,59 @@
             <DatePicker fx:id="debut_sejour2" layoutX="340.0" layoutY="23.0" promptText="Début du séjour" />
             <DatePicker fx:id="fin_sejour2" layoutX="570.0" layoutY="23.0" promptText="Fin du séjour" />
             <Button fx:id="rechercher" layoutX="872.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSearchButtonClick2" text="Rechercher" />
-            <TextField fx:id="txtDestination2" layoutX="52.0" layoutY="23.0" promptText="Destination" />
+            <TextField fx:id="txtRecherche2" layoutX="52.0" layoutY="23.0" prefHeight="25.0" prefWidth="227.0" promptText="Destination, contrepartie, logement ..." />
              <Text fx:id="txtWarning2" fill="RED" layoutX="53.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez saisir au moins 2 caractères" visible="false" wrappingWidth="249.13671875" />
          </children></Pane>
       <HBox layoutX="19.0" layoutY="161.0" prefHeight="50.0" prefWidth="1242.0" spacing="20.0">
          <children>
-            <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Contreparties">
+            <MenuButton accessibleRole="CHECK_MENU_ITEM" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Contreparties">
               <items>
-                  <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
-                  <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
-                  <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <CheckMenuItem mnemonicParsing="false" text="Bricolage" />
+                  <CheckMenuItem mnemonicParsing="false" text="Blanchissage" />
+                  <CheckMenuItem mnemonicParsing="false" text="Jardinage" />
+                  <CheckMenuItem mnemonicParsing="false" text="Babbysitting" />
+                  <CheckMenuItem mnemonicParsing="false" text="Cours d' anglais" />
+                  <CheckMenuItem mnemonicParsing="false" text="Promener les chiens" />
               </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Heures/j">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <CheckMenuItem mnemonicParsing="false" text="2" />
+                  <CheckMenuItem mnemonicParsing="false" text="3" />
+                  <CheckMenuItem mnemonicParsing="false" text="4" />
+                  <CheckMenuItem mnemonicParsing="false" text="5" />
+                  <CheckMenuItem mnemonicParsing="false" text="6" />
               </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Type de logement">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
+               <items>
+                  <CheckMenuItem mnemonicParsing="false" text="Chambre" />
+                  <CheckMenuItem mnemonicParsing="false" text="Tente" />
+                  <CheckMenuItem mnemonicParsing="false" text="Cabane" />
+               </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Voyageurs">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <RadioMenuItem mnemonicParsing="false" text="1" />
+                  <RadioMenuItem mnemonicParsing="false" text="2" />
+                  <RadioMenuItem mnemonicParsing="false" text="3" />
               </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Restauration">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <CheckMenuItem mnemonicParsing="false" text="Pension complète" />
+                  <CheckMenuItem mnemonicParsing="false" text="Demi pension" />
+                  <CheckMenuItem mnemonicParsing="false" text="Petit déjeuner" />
               </items>
             </MenuButton>
             <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Autres options">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <CheckMenuItem mnemonicParsing="false" text="Transfert" />
+                  <CheckMenuItem mnemonicParsing="false" text="Wifi" />
+                  <CheckMenuItem mnemonicParsing="false" text="Blanchissage" />
+                  <CheckMenuItem mnemonicParsing="false" text="Piscine" />
+                  <CheckMenuItem mnemonicParsing="false" text="Parking" />
+                  <CheckMenuItem mnemonicParsing="false" text="Balade à cheval" />
               </items>
             </MenuButton>
          </children>

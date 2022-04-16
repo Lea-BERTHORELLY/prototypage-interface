@@ -32,7 +32,7 @@ import javafx.stage.Stage;
 
 public class AccueilController implements Initializable{
 	@FXML private Pane contact;
-	@FXML private TextField txtDestination;
+	@FXML private TextField txtRecherche;
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
 	@FXML private Text txtWarning;
@@ -51,14 +51,14 @@ public class AccueilController implements Initializable{
 
 	@FXML
 	protected void onSearchButtonClick(ActionEvent event) throws IOException {
-		if (txtDestination.getText().length() > 1) {
+		if (txtRecherche.getText().length() > 1) {
 			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/search-view.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			SearchController searchController = (SearchController)fxmlLoader.getController();
 			listVoyagesResults = searchVoyagesResults();
 			searchController.setListAllVoyages(listAllVoyages);
 			searchController.setListVoyagesResults(listVoyagesResults);
-			searchController.setTxtDestination2(txtDestination);
+			searchController.setTxtRecherche2(txtRecherche);
 			searchController.setDebut_sejour2(debut_sejour);
 			searchController.setFin_sejour2(fin_sejour);
 			searchController.init();
@@ -91,19 +91,19 @@ public class AccueilController implements Initializable{
 	}
 
 	public ArrayList<Voyage> searchVoyagesResults(){
-		System.out.println(this.txtDestination.getText());
+		System.out.println(this.txtRecherche.getText());
 		if (debut_sejour.getValue() != null)	System.out.println(this.debut_sejour.getValue());
 		if (fin_sejour.getValue() != null)	System.out.println(this.fin_sejour.getValue());
 
 		// FOR DEMO: if input= "all", results if all 10000 voyages
-		if (txtDestination.getText().equals("all")){
+		if (txtRecherche.getText().equals("all")){
 			return this.listAllVoyages;
 		}
 
 		ArrayList<Voyage> results = new ArrayList<Voyage>();
 
 		for (Voyage v: listAllVoyages){
-			if ((v.getVille().contains(txtDestination.getText()))
+			if ((v.getVille().contains(txtRecherche.getText()))
 					&& (debut_sejour.getValue() == null || !debut_sejour.getValue().isBefore(LocalDate.parse(v.getDateArrivee())) )
 					&& (fin_sejour.getValue() == null || !fin_sejour.getValue().isAfter(LocalDate.parse(v.getDateDepart())) ) ){
 				results.add(v);
@@ -123,7 +123,4 @@ public class AccueilController implements Initializable{
 			}
 		} ).start();
 	}
-
-	//todo: tous les champs d'informations (logement,etc) pour la recherche
-
 }

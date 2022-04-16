@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class SearchController {
 
-    @FXML private TextField txtDestination2;
+    @FXML private TextField txtRecherche2;
     @FXML private DatePicker debut_sejour2;
     @FXML private DatePicker fin_sejour2;
     @FXML private Text txtWarning2;
@@ -47,7 +47,7 @@ public class SearchController {
 
     @FXML
     protected void onSearchButtonClick2(ActionEvent event) throws IOException {
-        if (txtDestination2.getText().length() > 1) {
+        if (txtRecherche2.getText().length() > 1) {
             listVoyagesResults2 = searchVoyagesResults2();
             setListVoyagesResults(listVoyagesResults2);
             displaySearchResults();
@@ -153,8 +153,8 @@ public class SearchController {
         this.listAllVoyages = listAllVoyages;
     }
 
-    public void setTxtDestination2(TextField txtDestination) {
-        this.txtDestination2.setText(txtDestination.getText());
+    public void setTxtRecherche2(TextField txtDestination) {
+        this.txtRecherche2.setText(txtDestination.getText());
     }
 
     public void setDebut_sejour2(DatePicker debut_sejour2) {
@@ -166,19 +166,19 @@ public class SearchController {
     }
 
     public ArrayList<Voyage> searchVoyagesResults2(){
-        System.out.println(this.txtDestination2.getText());
+        System.out.println(this.txtRecherche2.getText());
         if (debut_sejour2.getValue() != null)	System.out.println(this.debut_sejour2.getValue());
         if (fin_sejour2.getValue() != null)	System.out.println(this.fin_sejour2.getValue());
 
         // FOR DEMO: if input= "all", results if all 10000 voyages
-        if (txtDestination2.getText().equals("all")){
+        if (txtRecherche2.getText().equals("all")){
             return this.listAllVoyages;
         }
 
         ArrayList<Voyage> results = new ArrayList<Voyage>();
 
         for (Voyage v: listAllVoyages){
-            if ((v.getVille().contains(txtDestination2.getText()))
+            if ((v.getVille().contains(txtRecherche2.getText()) || v.getContreparties().contains(txtRecherche2.getText()) || v.getType().contains(txtRecherche2.getText()))
                     && (debut_sejour2.getValue() == null || !debut_sejour2.getValue().isBefore(LocalDate.parse(v.getDateArrivee())) )
                     && (fin_sejour2.getValue() == null || !fin_sejour2.getValue().isAfter(LocalDate.parse(v.getDateDepart())) ) ){
                 results.add(v);

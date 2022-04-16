@@ -22,7 +22,10 @@
                     <Label fx:id="logement" prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" text="Descriptif du logement" />
                     <HBox prefHeight="36.0" prefWidth="328.0">
                         <children>
-                            <Label prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" />
+                            <Label fx:id="indexForTest" prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" text="(indexForTest)">
+                        <font>
+                           <Font size="10.0" />
+                        </font></Label>
                             <Label fx:id="heures" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="79.0" prefWidth="326.0" style="-fx-padding:10;" text="0 h/j" textAlignment="RIGHT">
                                 <font>
                                     <Font name="System Bold" size="18.0" />
