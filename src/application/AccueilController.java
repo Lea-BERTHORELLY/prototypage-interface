@@ -30,6 +30,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AccueilController implements Initializable{
@@ -37,6 +38,7 @@ public class AccueilController implements Initializable{
 	@FXML private TextField txtf_rechercher_voyage;
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
+	@FXML private Text txtWarning;
 
 	private ArrayList<Voyage> listAllVoyages;
 	private ArrayList<Voyage> listVoyagesResults;
@@ -52,20 +54,24 @@ public class AccueilController implements Initializable{
 
 	@FXML
 	protected void onSearchButtonClick(ActionEvent event) throws IOException {
-		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/search-view.fxml"));
-		Parent root = (Parent) fxmlLoader.load();
+		if (txtf_rechercher_voyage.getText().length() > 1) {
+			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("views/search-view.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
 
-		SearchController controller = (SearchController)fxmlLoader.getController();
-		listVoyagesResults = searchVoyagesResults();
-		controller.setListVoyages(listVoyagesResults);
-		controller.init();
+			SearchController controller = (SearchController)fxmlLoader.getController();
+			listVoyagesResults = searchVoyagesResults();
+			controller.setListVoyages(listVoyagesResults);
+			controller.init();
 
-		Scene scene = new Scene(root);
-		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Scene scene = new Scene(root);
+			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-		stage.setScene(scene);
-		stage.centerOnScreen();
-		stage.show();
+			stage.setScene(scene);
+			stage.centerOnScreen();
+			stage.show();
+		} else {
+			displayWarning();
+		}
 	}
 
 	public ArrayList<Voyage> getAllVoyages(){
@@ -89,8 +95,8 @@ public class AccueilController implements Initializable{
 		if (debut_sejour.getValue() != null)	System.out.println(this.debut_sejour.getValue());
 		if (fin_sejour.getValue() != null)	System.out.println(this.fin_sejour.getValue());
 
-		// FOR DEMO: if no input, results if all 10000 voyages
-		if (txtf_rechercher_voyage.getText().equals("") && debut_sejour.getValue() == null && fin_sejour.getValue() == null ){
+		// FOR DEMO: if input= "all", results if all 10000 voyages
+		if (txtf_rechercher_voyage.getText().equals("all")){
 			return this.listAllVoyages;
 		}
 
@@ -107,7 +113,18 @@ public class AccueilController implements Initializable{
 		return results;
 
 	}
-	//todo: bloquer en dessous de 2 caractères
+
+	public void displayWarning(){
+		txtWarning.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				txtWarning.setVisible(false);
+			}
+		} ).start();
+	}
+
 	//todo: tous les champs d'informations (logement,etc) pour la recherche
 	//todo: afficher sejour 20 par 20
 	//todo: deporter recherche vers SearchController
