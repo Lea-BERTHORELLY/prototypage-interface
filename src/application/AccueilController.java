@@ -103,7 +103,7 @@ public class AccueilController implements Initializable{
 		ArrayList<Voyage> results = new ArrayList<Voyage>();
 
 		for (Voyage v: listAllVoyages){
-			if ((v.getVille().contains(txtDestination.getText()) || v.getContreparties().contains(txtDestination.getText()))
+			if ((v.getVille().contains(txtDestination.getText()))
 					&& (debut_sejour.getValue() == null || !debut_sejour.getValue().isBefore(LocalDate.parse(v.getDateArrivee())) )
 					&& (fin_sejour.getValue() == null || !fin_sejour.getValue().isAfter(LocalDate.parse(v.getDateDepart())) ) ){
 				results.add(v);
@@ -125,6 +125,5 @@ public class AccueilController implements Initializable{
 	}
 
 	//todo: tous les champs d'informations (logement,etc) pour la recherche
-	//todo: afficher sejour 20 par 20
 
 }

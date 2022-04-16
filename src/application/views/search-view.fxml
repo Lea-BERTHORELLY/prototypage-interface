@@ -83,7 +83,7 @@
          </children>
       </HBox>
       <ImageView fx:id="imgMap" fitHeight="433.0" fitWidth="620.0" layoutX="640.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" />
-      <ScrollPane fx:id="paneResults" hbarPolicy="NEVER" layoutX="20.0" layoutY="237.0" prefHeight="433.0" prefWidth="620.0" vbarPolicy="NEVER">
+      <ScrollPane fx:id="scrollPaneResults" hbarPolicy="NEVER" layoutX="20.0" layoutY="237.0" onScroll="#onScrollFinished" prefHeight="433.0" prefWidth="620.0" vbarPolicy="NEVER">
             <VBox fx:id="tripListView" layoutX="14.0" layoutY="14.0" prefHeight="460.0" prefWidth="616.0" />
       </ScrollPane>
    </children>
