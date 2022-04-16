@@ -19,7 +19,7 @@
       <Pane layoutX="140.0" layoutY="476.0" prefHeight="94.0" prefWidth="1000.0" style="-fx-border-color: black;" styleClass="-fx-border-color">
          <children>
             <DatePicker fx:id="debut_sejour" layoutX="340.0" layoutY="32.0" promptText="Début du séjour" />
-            <DatePicker fx:id="fin_séjour" layoutX="570.0" layoutY="32.0" promptText="Fin du séjour" />
+            <DatePicker fx:id="fin_sejour" layoutX="570.0" layoutY="32.0" promptText="Fin du séjour" />
             <Button fx:id="rechercher" layoutX="872.0" layoutY="32.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Rechercher" />
             <TextField fx:id="txtf_rechercher_voyage" layoutX="52.0" layoutY="32.0" promptText="Rechercher" />
          </children></Pane>

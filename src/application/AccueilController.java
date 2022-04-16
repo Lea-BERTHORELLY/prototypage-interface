@@ -107,10 +107,8 @@ public class AccueilController implements Initializable{
 		return results;
 
 	}
-	//todo: afficher "désolé aucun résultat" derriere map et hbox
 	//todo: bloquer en dessous de 2 caractères
 	//todo: tous les champs d'informations (logement,etc) pour la recherche
-	//todo: affiche nombre de resultats
 	//todo: afficher sejour 20 par 20
 	//todo: deporter recherche vers SearchController
 
