@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -26,5 +28,26 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="141.0" layoutY="169.0" pickOnBounds="true">
+         <image>
+            <Image url="https://www.horizon-provence.com/pont-avignon/photos/pont-saint-benezet08.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="341.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+            <Image url="https://www.rustica.fr/images/247913j-l760-h550.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://www.josera.fr/media/magefan_blog/Pferd_Ausritt_shutterstock_1883230375_Ratgeber-Headerbild_1905x1040.jpg" />
+      	</image></ImageView>
+      <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="741.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://www.cabanes-de-france.com/wp-content/uploads/2018/06/clarisse-creaphotos-7.jpg" />
+      	</image></ImageView>
+      <ImageView fx:id="img5" fitHeight="150.0" fitWidth="200.0" layoutX="941.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://resize2.prod.docfr.doc-media.fr/rcrop/480,280,center-middle/img/var/doctissimo/storage/images/fr/www/famille/maison/jardinage/661232-2-fre-FR/jardinage.jpg" />
+      	</image>
+      	</ImageView>
    </children>
 </AnchorPane>
