@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
@@ -41,12 +38,39 @@ public class SearchController {
     public void init() {
         setMap();
         displaySearchResults();
+
+        // mise à jour liste de voyage automatique sur modification de caractère
+        txtRecherche2.textProperty().addListener((observable, oldValue, newValue) -> {
+            searchVoyages();
+        });
+
+        // init datepickers
+        LocalDate today = LocalDate.now();
+        updateDatePicker(debut_sejour2, today);
+        updateDatePicker(fin_sejour2, today);
+
+        debut_sejour2.valueProperty().addListener((ov, oldValue, newValue) -> {
+            updateDatePicker(fin_sejour2, debut_sejour2.getValue());
+            if (fin_sejour2.getValue().isBefore(debut_sejour2.getValue())){
+                fin_sejour2.setValue(debut_sejour2.getValue());
+            }
+            searchVoyages();
+        });
+
+        fin_sejour2.valueProperty().addListener((ov, oldValue, newValue) -> {
+            searchVoyages();
+        });
+
+
         // todo: initialize map effects
-//        for (int i=0; i<nodes.length;i++){ }
     }
 
     @FXML
     protected void onSearchButtonClick2(ActionEvent event) throws IOException {
+        searchVoyages();
+    }
+
+    public void searchVoyages(){
         if (txtRecherche2.getText().length() > 1) {
             listVoyagesResults2 = searchVoyagesResults2();
             setListVoyagesResults(listVoyagesResults2);
@@ -197,5 +221,15 @@ public class SearchController {
                 txtWarning2.setVisible(false);
             }
         } ).start();
+    }
+
+    public void updateDatePicker(DatePicker dp, LocalDate startLocalDate){
+        // restriction sur date picker
+        dp.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(startLocalDate) < 0 );
+            }
+        });
     }
 }
