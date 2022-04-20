@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Border;
@@ -47,6 +48,18 @@ public class AccueilController implements Initializable{
 
 		// get all voyages
 		listAllVoyages = this.getAllVoyages();
+
+		// init datepickers
+		LocalDate today = LocalDate.now();
+		updateDatePicker(debut_sejour, today);
+		updateDatePicker(fin_sejour, today);
+
+		debut_sejour.valueProperty().addListener((ov, oldValue, newValue) -> {
+			updateDatePicker(fin_sejour, debut_sejour.getValue());
+			if (fin_sejour.getValue().isBefore(debut_sejour.getValue())){
+				fin_sejour.setValue(debut_sejour.getValue());
+			}
+		});
 	}
 
 	@FXML
@@ -122,5 +135,15 @@ public class AccueilController implements Initializable{
 				txtWarning.setVisible(false);
 			}
 		} ).start();
+	}
+
+	public void updateDatePicker(DatePicker dp, LocalDate startLocalDate){
+		// restriction sur date picker
+		dp.setDayCellFactory(picker -> new DateCell() {
+			public void updateItem(LocalDate date, boolean empty) {
+				super.updateItem(date, empty);
+				setDisable(empty || date.compareTo(startLocalDate) < 0 );
+			}
+		});
 	}
 }
