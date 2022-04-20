@@ -2,6 +2,8 @@ package application.models;
 
 import com.opencsv.bean.CsvBindByPosition;
 
+import java.time.chrono.ChronoLocalDate;
+
 public class Voyage {
 
     @CsvBindByPosition(position = 0)
