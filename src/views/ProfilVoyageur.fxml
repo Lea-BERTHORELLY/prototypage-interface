@@ -6,12 +6,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfilVoyageurController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfilVoyageurController">
    <children>
       <AnchorPane layoutX="-117.0" layoutY="-218.0" prefHeight="720.0" prefWidth="1280.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="308.0" layoutX="657.0" layoutY="381.0" stroke="BLACK" strokeType="INSIDE" width="445.0" />
-            <Text layoutX="189.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jean NAEJ">
+            <Text fx:id="textPrenomNom" layoutX="189.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jean NAEJ">
                <font>
                   <Font size="38.0" />
                </font>
@@ -21,8 +21,8 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text layoutX="706.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonjour je suis Jean NAEJ j'ai 53 ans j'aime le voyage" />
-            <Button layoutX="188.0" layoutY="331.0" mnemonicParsing="false" text="Modifier le profil" />
+            <Text fx:id="textAPropos" layoutX="706.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonjour je suis Jean NAEJ j'ai 53 ans j'aime le voyage" />
+            <Button layoutX="188.0" layoutY="331.0" mnemonicParsing="false" onAction="#modifierProfil" text="Modifier le profil" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="308.0" layoutX="170.0" layoutY="381.0" stroke="BLACK" strokeType="INSIDE" width="445.0" />
             <Text layoutX="194.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations">
                <font>
@@ -39,8 +39,9 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="248.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="France" />
-            <Text layoutX="248.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ville de france" />
+            <Text fx:id="textPays" layoutX="248.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="France" />
+            <Text fx:id="textVille" layoutX="248.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ville de france" />
+            <Button layoutX="538.0" layoutY="263.0" mnemonicParsing="false" onAction="#miseEnPlaceProfil" text="Mise en place profil (à supprimer après)" />
          </children>
       </AnchorPane>
    </children>
