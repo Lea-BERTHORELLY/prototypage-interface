@@ -41,12 +41,22 @@ public class SearchController {
     public void init() {
         setMap();
         displaySearchResults();
+
+        // mise à jour liste de voyage automatique sur modification de caractère
+        txtRecherche2.textProperty().addListener((observable, oldValue, newValue) -> {
+            searchVoyages();
+        });
+
         // todo: initialize map effects
 //        for (int i=0; i<nodes.length;i++){ }
     }
 
     @FXML
     protected void onSearchButtonClick2(ActionEvent event) throws IOException {
+        searchVoyages();
+    }
+
+    public void searchVoyages(){
         if (txtRecherche2.getText().length() > 1) {
             listVoyagesResults2 = searchVoyagesResults2();
             setListVoyagesResults(listVoyagesResults2);
