@@ -22,7 +22,7 @@
                </font>
             </Text>
             <Text fx:id="textAPropos" layoutX="706.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonjour je suis Jean NAEJ j'ai 53 ans j'aime le voyage" />
-            <Button layoutX="188.0" layoutY="331.0" mnemonicParsing="false" onAction="#modifierProfil" text="Modifier le profil" />
+            <Button layoutX="188.0" layoutY="331.0" mnemonicParsing="false" onAction="#switchToModifierProfil" text="Modifier le profil" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="308.0" layoutX="170.0" layoutY="381.0" stroke="BLACK" strokeType="INSIDE" width="445.0" />
             <Text layoutX="194.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations">
                <font>
