@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="180.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="onTripViewClick" prefHeight="180.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
 
     <HBox layoutX="5.0" layoutY="5.0" prefHeight="153.0" prefWidth="589.0" spacing="20.0">
         <children>
