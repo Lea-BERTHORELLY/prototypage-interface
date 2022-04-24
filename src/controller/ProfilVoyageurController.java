@@ -27,7 +27,6 @@ import javafx.stage.Stage;
 public class ProfilVoyageurController {
 	private Stage stage;
 	private Scene scene;
-	private Parent root;
 	
 	private int idUtilisateur = 36;
 	
@@ -57,22 +56,22 @@ public class ProfilVoyageurController {
 		secController.miseEnPlaceModifierProfil();
 	}
 	
+	// Methode à appeler à l'appuis sur le bouton profil
 	public void miseEnPlaceProfil() {
 		try {
-			 
-	        // Create an object of filereader
-	        // class with CSV file as a parameter.
+			// Lit le fichier profil.csv
 	        FileReader filereader = new FileReader("profil.csv");
 	        CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
-	        // create csvReader object passing
-	        // file reader as a parameter
 	        CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parser).build();
 	        String[] nextRecord = null;
+	        
+	        // Met en place les informations du profil de l'utilisateur en fonction de idUtilisateur
 	        int i = 0;
 	        while (i != idUtilisateur) {
 	        	nextRecord = csvReader.readNext();
 	        	i++;
 	        }
+	       
 	        textPrenomNom.setText(nextRecord[2] + " " + nextRecord[1]);
 	        textPays.setText(nextRecord[4]);
 	    	textVille.setText(nextRecord[3]);
@@ -112,18 +111,14 @@ public class ProfilVoyageurController {
 	}
 	
 	public void onValiderModificationClicked(ActionEvent event) throws IOException, CsvValidationException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ProfilVoyageur.fxml"));
-		Parent root = (Parent) loader.load();
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root,1280,720);
-		stage.setScene(scene);
-		stage.show();
 		
-		
+		// Lis le fichier csv
 		FileReader filereader = new FileReader("profil.csv");
         CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parser).build();
         String[] nextRecord = null;
+        
+        // Reecrit le fichier csv avec les informations modifiees
         int i = 0;
         ArrayList<String[]> profils = new ArrayList<String[]>();
         while (i+1 < idUtilisateur) {
@@ -144,11 +139,6 @@ public class ProfilVoyageurController {
         	i++;
         }
         
-       /* for(int j = 0; j < profils.size(); j++) {
-        	System.out.println(profils.get(j)[0] + " "+profils.get(j)[6]);
-        }*/
-        
-        
         FileWriter outputfile = new FileWriter("profil.csv");
         
         CSVWriter writer = new CSVWriter(outputfile, ';',
@@ -160,6 +150,14 @@ public class ProfilVoyageurController {
   
         writer.close();
         
+        //Change de fenetre
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ProfilVoyageur.fxml"));
+		Parent root = (Parent) loader.load();
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root,1280,720);
+		stage.setScene(scene);
+		stage.show();
+		
 		ProfilVoyageurController secController = loader.getController();
 		secController.miseEnPlaceProfil();
 	}
