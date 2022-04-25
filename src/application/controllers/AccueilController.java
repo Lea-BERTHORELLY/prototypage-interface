@@ -43,7 +43,6 @@ public class AccueilController implements Initializable{
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
 	@FXML private Text txtWarning;
-	@FXML private ImageView imgLogo;
 
 	private ArrayList<Voyage> listAllVoyages;
 	private ArrayList<Voyage> listVoyagesResults;
@@ -80,16 +79,6 @@ public class AccueilController implements Initializable{
 				fin_sejour.setValue(debut_sejour.getValue());
 			}
 		});
-
-		imgLogo.setOnMouseClicked((new EventHandler<MouseEvent>() {
-			public void handle(MouseEvent event) {
-				try {
-					goToAccueil(event);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}));
 	}
 
 

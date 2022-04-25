@@ -12,6 +12,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DetailVoyageController">
    <children>
       <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">
@@ -203,5 +205,13 @@
                </HBox>
             </children></VBox>
       </ScrollPane>
+      <ImageView fx:id="imgLogo" fitHeight="50.0" fitWidth="180.0" layoutX="21.0" layoutY="12.0" onMouseClicked="#goToAccueil" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logoAdeona.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
