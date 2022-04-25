@@ -15,5 +15,12 @@
 	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/javafx.swing.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/javafx.web.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/opencsv-5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/java/javafx-sdk-11.0.2/lib/commons-text-1.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

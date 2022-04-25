@@ -1,4 +1,4 @@
-package application;
+package application.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ public class ConceptAdeonaController {
 	public void proposerSejour() {
 		Scene scene = btnProposerSejour.getScene();
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("DetailSejourHote.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/DetailSejourHote.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {
@@ -29,7 +29,7 @@ public class ConceptAdeonaController {
 	public void voirSejour() {
 		Scene scene = btnVoirSejour.getScene();
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ListeSejourHoteBarreRecherche.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/ListeSejourHoteBarreRecherche.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {

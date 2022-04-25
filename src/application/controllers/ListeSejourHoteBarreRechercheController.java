@@ -1,4 +1,4 @@
-package application;
+package application.controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,7 +33,7 @@ public class ListeSejourHoteBarreRechercheController {
 	public void proposerAutreSejour() {
 		Scene scene = btnProposerAutreSejour.getScene();
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("DetailSejourHote.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/DetailSejourHote.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {
@@ -44,7 +44,7 @@ public class ListeSejourHoteBarreRechercheController {
 	public void concept() {
 		Scene scene = btnConcept.getScene();
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ConceptAdeona.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/ConceptAdeona.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {
