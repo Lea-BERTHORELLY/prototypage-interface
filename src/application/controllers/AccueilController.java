@@ -1,6 +1,7 @@
 package application.controllers;
 
 import application.Main;
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -25,6 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -41,6 +43,7 @@ public class AccueilController implements Initializable{
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
 	@FXML private Text txtWarning;
+	@FXML private ImageView imgLogo;
 
 	private ArrayList<Voyage> listAllVoyages;
 	private ArrayList<Voyage> listVoyagesResults;
@@ -77,6 +80,16 @@ public class AccueilController implements Initializable{
 				fin_sejour.setValue(debut_sejour.getValue());
 			}
 		});
+
+		imgLogo.setOnMouseClicked((new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent event) {
+				try {
+					goToAccueil(event);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}));
 	}
 
 
@@ -168,18 +181,18 @@ public class AccueilController implements Initializable{
 		});
 	}
 	
-	public void goToAccueil(ActionEvent event) throws IOException {
+	public void goToAccueil(MouseEvent event) throws IOException {
 		try {
-			System.out.println("Vous �tes sur la page d'accueil");
-			Parent Accueil = FXMLLoader.load(getClass().getResource("views/Accueil.fxml"));
+			Parent Accueil = FXMLLoader.load(Main.class.getResource("views/Accueil.fxml"));
 			Scene AccueilScene = new Scene(Accueil);
-			
+
 			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			settStage.setScene(AccueilScene);
 			settStage.show();
-		} 
+			System.out.println("Vous êtes sur la page d'accueil");
+		}
 		catch (Exception e) {
-			System.err.println(e.getLocalizedMessage());
+			e.printStackTrace();
 		}
 	}
 }

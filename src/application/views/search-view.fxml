@@ -29,12 +29,12 @@
             <DatePicker fx:id="debut_sejour2" layoutX="340.0" layoutY="23.0" promptText="Début du séjour" />
             <DatePicker fx:id="fin_sejour2" layoutX="570.0" layoutY="23.0" promptText="Fin du séjour" />
             <Button fx:id="rechercher" layoutX="872.0" layoutY="23.0" mnemonicParsing="false" onAction="#onSearchButtonClick2" text="Rechercher" />
-            <TextField fx:id="txtRecherche2" layoutX="52.0" layoutY="23.0" prefHeight="25.0" prefWidth="227.0" promptText="Destination, contrepartie, logement ..." />
+            <TextField fx:id="txtRecherche2" layoutX="52.0" layoutY="23.0" prefHeight="25.0" prefWidth="227.0" promptText="Destination, service, logement ..." />
              <Text fx:id="txtWarning2" fill="RED" layoutX="53.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez saisir au moins 2 caractères" visible="false" wrappingWidth="249.13671875" />
          </children></Pane>
       <HBox layoutX="19.0" layoutY="161.0" prefHeight="50.0" prefWidth="1242.0" spacing="20.0">
          <children>
-            <MenuButton accessibleRole="CHECK_MENU_ITEM" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Contreparties">
+            <MenuButton accessibleRole="CHECK_MENU_ITEM" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Services">
               <items>
                   <CheckMenuItem mnemonicParsing="false" text="Bricolage" />
                   <CheckMenuItem mnemonicParsing="false" text="Blanchissage" />
@@ -74,7 +74,7 @@
                   <CheckMenuItem mnemonicParsing="false" text="Petit déjeuner" />
               </items>
             </MenuButton>
-            <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Autres options">
+            <MenuButton mnemonicParsing="false" prefWidth="190.0" text="Contreparties">
               <items>
                   <CheckMenuItem mnemonicParsing="false" text="Transfert" />
                   <CheckMenuItem mnemonicParsing="false" text="Wifi" />
