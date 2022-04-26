@@ -89,6 +89,16 @@
       <ScrollPane fx:id="scrollPaneResults" hbarPolicy="NEVER" layoutX="20.0" layoutY="237.0" onScroll="#onScrollFinished" prefHeight="433.0" prefWidth="620.0" vbarPolicy="NEVER">
             <VBox fx:id="tripListView" layoutX="14.0" layoutY="14.0" prefHeight="460.0" prefWidth="616.0" />
       </ScrollPane>
+      <Text fx:id="typeConnexion" layoutX="468.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="idHoteConnecte" layoutX="600.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="98.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
        <ImageView fx:id="imgLogo" fitHeight="50.0" fitWidth="180.0" layoutX="21.0" layoutY="12.0" onMouseClicked="#goToAccueil" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../assets/logoAdeona.png" />
