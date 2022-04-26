@@ -24,7 +24,7 @@
          </children></Pane>
       <HBox layoutX="19.0" layoutY="161.0" prefHeight="50.0" prefWidth="1242.0" spacing="20.0">
          <children>
-            <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" styleClass="filter" stylesheets="@../styles/styles.css" text="Services">
+            <MenuButton accessibleRole="CHECK_MENU_ITEM" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" styleClass="filter" stylesheets="@../styles/styles.css" text="Services">
               <items>
                   <CheckMenuItem mnemonicParsing="false" text="Bricolage" />
                   <CheckMenuItem mnemonicParsing="false" text="Blanchissage" />
