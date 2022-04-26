@@ -144,9 +144,14 @@ public class SearchController {
                 heures.setText(listVoyagesResults2.get(startIndex + i).getHeure() + " h/j");
                 indexForTest.setText("(" + (startIndex + i + 1) + ")");
 
+                // styles
+//                cardsToAdd[i].setStyle("");
+
                 // add some effect
                 cardsToAdd[i].setOnMouseEntered(event -> {
-                    cardsToAdd[j].setStyle("-fx-border-color: grey");
+                    cardsToAdd[j].setStyle("-fx-border-color: grey;" +
+                            "-fx-background-color: white;" +
+                            "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
                 });
                 cardsToAdd[i].setOnMouseExited(event -> {
                     cardsToAdd[j].setStyle("-fx-border-color: lightgrey");

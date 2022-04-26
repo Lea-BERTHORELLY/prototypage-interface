@@ -2,13 +2,13 @@
 * {
     -fx-primary-color: #a7da6b;
     -fx-secondary-color: #a7da6b;
-    -fx-light-grey-color: #a7da6b;
+    -fx-grey-color: grey;
 
     -fx-focus-color: -fx-secondary-color;
 }
 
 .elevatedCard {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /*box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);*/
     -fx-background-color: white;
 }
 
@@ -36,6 +36,21 @@
     -fx-border-color: -fx-primary-color;
     -fx-border-radius: 30;
     -fx-font-size: 14;
+    /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
+}
+
+.menu-button .label{
+    -fx-text-fill: -fx-grey-color;
+}
+
+.filter {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: -fx-grey-colory;
+    -fx-border-color: lightGrey;
+    -fx-border-radius: 30;
+    -fx-font-size: 12;
     /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
 }
 
