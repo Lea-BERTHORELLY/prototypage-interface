@@ -25,6 +25,7 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 public class DetailSejourHoteController {
 	
@@ -57,12 +58,112 @@ public class DetailSejourHoteController {
 	private String nbVoyageur1="";
 	private String restauration="";
 	private String contrepartie="";
-
+	
+	@FXML private Text localisationErr, periodeErr, typeLogementErr, serviceErr, dureeErr, nbVoyageurErr, restaurationErr, contrepartieErr, transfertErr;
+	
+	public void localisationErr(){
+		localisationErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				localisationErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void periodeErr(){
+		periodeErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				periodeErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void typeLogementErr(){
+		typeLogementErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				typeLogementErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void serviceErr(){
+		serviceErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				serviceErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void dureeErr(){
+		dureeErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				dureeErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void nbVoyageurErr(){
+		nbVoyageurErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				nbVoyageurErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void restaurationErr(){
+		restaurationErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				restaurationErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void contrepartieErr(){
+		contrepartieErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				contrepartieErr.setVisible(false);
+			}
+		} ).start();
+	}
+	
+	public void transfertErr(){
+		transfertErr.setVisible(true);
+		new Thread( new Runnable() {
+			public void run()  {
+				try  { Thread.sleep( 3000 ); }
+				catch (InterruptedException ie)  {}
+				transfertErr.setVisible(false);
+			}
+		} ).start();
+	}
 	
 	public void validerSejourHote() {
+		boolean error = false;
 		Scene scene = btnValiderSejourHote.getScene();
 		try {
-			
 			//on récupère les valeurs des champs text saisis
 			localisation1 = localisation.getText();
 			
@@ -96,12 +197,15 @@ public class DetailSejourHoteController {
 			else if (tente.isSelected()) {
 				typeLogement="Tente";
 			}
+			else {
+				typeLogement="";
+			}
 			
 			//on récupère les valeurs des radiobutton services saisis
 			if (jardinage.isSelected()) {
 				service="Jardinage";
 			}
-			if (babysitting.isSelected()) {
+			else if (babysitting.isSelected()) {
 				if(!service.equals("")) {
 					service=service+", Babysitting";
 				}
@@ -109,7 +213,7 @@ public class DetailSejourHoteController {
 					service="Babysitting";
 				}
 			}
-			if (bricolage.isSelected()) {
+			else if (bricolage.isSelected()) {
 				if(!service.equals("")) {
 					service=service+", Bricolage";
 				}
@@ -117,7 +221,7 @@ public class DetailSejourHoteController {
 					service="Bricolage";
 				}
 			}
-			if (coursAnglais.isSelected()) {
+			else if (coursAnglais.isSelected()) {
 				if(!service.equals("")) {
 					service=service+", Cours anglais";
 				}
@@ -125,7 +229,7 @@ public class DetailSejourHoteController {
 					service="Cours anglais";
 				}
 			}
-			if (promenerChien.isSelected()) {
+			else if (promenerChien.isSelected()) {
 				if(!service.equals("")) {
 					service=service+", Promener chiens";
 				}
@@ -214,6 +318,51 @@ public class DetailSejourHoteController {
 			else if (transfertNon.isSelected()) {
 				transfert="Sans transfert";
 			}
+			else {
+				transfert="";
+			}
+			
+			//on test si le champ n'a pas été saisi
+			if(localisation1.equals("")) {
+				error=true;
+				localisationErr();
+			}
+			if(periodeDeb1.equals("")) {
+				error=true;
+				periodeErr();
+			}
+			if(periodeFin1.equals("")) {
+				error=true;
+				periodeErr();
+			}
+			if(typeLogement.equals("")) {
+				error=true;
+				typeLogementErr();
+			}
+			if(service.equals("")) {
+				error=true;
+				serviceErr();
+			}
+			if(dureeQuotidienne1.equals("")) {
+				error=true;
+				dureeErr();
+			}
+			if(nbVoyageur1.equals("")) {
+				error=true;
+				nbVoyageurErr();
+			}
+			if(restauration.equals("")) {
+				error=true;
+				restaurationErr();
+			}
+			if(contrepartie.equals("")) {
+				error=true;
+				contrepartieErr();
+			}
+			if(transfert.equals("")) {
+				error=true;
+				transfertErr();
+			}
 			
 			System.out.println(localisation1);
 			System.out.println(periodeDeb1);
@@ -235,6 +384,7 @@ public class DetailSejourHoteController {
 			
 			System.out.println("newVoyage="+newVoyage);
 			
+			if(error==false) {
 				//PrintStream l_out =(new FileOutputStream("src/application/assets/voyages10.csv"),true); 
 				FileWriter fw = new FileWriter("src/application/assets/voyages10.csv",true); 
 			
@@ -243,11 +393,10 @@ public class DetailSejourHoteController {
 				fw.flush(); 
 				fw.close(); 
 				fw=null;
-								
-				//AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/ListeSejourHoteBarreRecherche.fxml"));
+				
 				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/search-view.fxml"));
 				scene.setRoot(root);
-
+			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();

@@ -68,6 +68,15 @@
       <RadioButton fx:id="parking" layoutX="690.0" layoutY="594.0" mnemonicParsing="false" text="Parking" />
       <ImageView fx:id="image" fitHeight="225.0" fitWidth="330.0" layoutX="909.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="image" fitHeight="235.0" fitWidth="319.0" layoutX="909.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="localisationErr" fill="RED" layoutX="477.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation obligatoire" visible="false" wrappingWidth="211.0" />
+      <Text fx:id="periodeErr" fill="RED" layoutX="791.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Période obligatoire" visible="false" wrappingWidth="211.0" />
+      <Text fx:id="typeLogementErr" fill="RED" layoutX="668.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de logement obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="serviceErr" fill="RED" layoutX="903.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service(s) obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="dureeErr" fill="RED" layoutX="324.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="nbVoyageurErr" fill="RED" layoutX="324.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de voyageur(s)" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="restaurationErr" fill="RED" layoutX="782.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restauration obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="contrepartieErr" fill="RED" layoutX="844.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrepartie(s) obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="transfertErr" fill="RED" layoutX="400.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert obligatoire" visible="false" wrappingWidth="288.0" />
    </children>
    <!-- 
    <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">

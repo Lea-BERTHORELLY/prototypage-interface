@@ -38,16 +38,20 @@ public class Connexion {
 			if(hote.isSelected()) {
 				System.out.println("hote selectionné");
 				typeConnexion="Hote";
+				
+				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/DetailSejourHote.fxml"));
+				Scene scene = valider.getScene();
+				scene.setRoot(root);
 			}
 			else {
 				typeConnexion="Voyageur";
+				ConnexionParam param = ConnexionParam.getInstance();
+		        param.setConnexion(id.getText(),typeConnexion);
+		        
+				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/search-view.fxml"));
+				Scene scene = valider.getScene();
+				scene.setRoot(root);
 			}
-			ConnexionParam param = ConnexionParam.getInstance();
-	        param.setConnexion(id.getText(),typeConnexion);
-	        
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/search-view.fxml"));
-			Scene scene = valider.getScene();
-			scene.setRoot(root);
 		} 
 		catch (IOException e) {
 			e.printStackTrace();

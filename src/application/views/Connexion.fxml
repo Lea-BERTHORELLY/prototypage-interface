@@ -24,7 +24,7 @@
       <HBox layoutX="224.0" layoutY="646.0" prefHeight="48.0" prefWidth="309.0" spacing="15.0" />
       <Button fx:id="accueil" layoutX="957.0" layoutY="651.0" mnemonicParsing="false" onAction="#accueil" text="Accueil" />
       <Text layoutX="223.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de connexion  : " wrappingWidth="177.0" />
-      <HBox fx:id="typeConnexion" layoutX="421.0" layoutY="357.0" prefHeight="39.0" prefWidth="224.0" spacing="10.0">
+      <HBox fx:id="typeConnexion" layoutX="389.0" layoutY="363.0" prefHeight="39.0" prefWidth="224.0" spacing="10.0">
          <children>
             <RadioButton fx:id="hote" mnemonicParsing="false" text="hote">
                <toggleGroup>

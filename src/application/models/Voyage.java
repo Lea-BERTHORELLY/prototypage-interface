@@ -6,62 +6,38 @@ import java.time.chrono.ChronoLocalDate;
 
 public class Voyage {
 
-	@CsvBindByPosition(position = 0)
-    private String idVoyage;
-	
-	@CsvBindByPosition(position = 1)
-    private String idHote;
-	
-	@CsvBindByPosition(position = 2)
-    private String nbPersonne;
-	
-    @CsvBindByPosition(position = 3)
+    @CsvBindByPosition(position = 0)
     private String ville;
 
-    @CsvBindByPosition(position = 4)
+    @CsvBindByPosition(position = 1)
     private String heure;
 
-    @CsvBindByPosition(position = 5)
+    @CsvBindByPosition(position = 2)
     private String type;
 
-    @CsvBindByPosition(position = 6)
+    @CsvBindByPosition(position = 3)
     private String contreparties;
 
-    @CsvBindByPosition(position = 7)
+    @CsvBindByPosition(position = 4)
     private String contraintes;
 
-    @CsvBindByPosition(position = 8)
+    @CsvBindByPosition(position = 5)
     private String services;
 
-    @CsvBindByPosition(position = 9)
+    @CsvBindByPosition(position = 6)
     private String transfert;
 
-    @CsvBindByPosition(position = 10)
+    @CsvBindByPosition(position = 7)
     private String restauration;
 
-    @CsvBindByPosition(position = 11)
-    private String dateDepart;
-
-    @CsvBindByPosition(position = 12)
+    @CsvBindByPosition(position = 8)
     private String dateArrivee;
-    
-    @CsvBindByPosition(position = 13)
-    private String idVoyageur;
+
+    @CsvBindByPosition(position = 9)
+    private String dateDepart;
 
     //  getters, setters, toString
 
-    public String getIdVoyage() {
-        return idVoyage;
-    }
-    
-    public String getIdHote() {
-        return idHote;
-    }
-    
-    public String getNbPersonne() {
-        return nbPersonne;
-    }
-    
     public String getVille() {
         return ville;
     }
@@ -100,9 +76,5 @@ public class Voyage {
 
     public String getDateDepart() {
         return dateDepart;
-    }
-    
-    public String getIdVoyageur() {
-        return idVoyageur;
     }
 }
