@@ -1,8 +1,4 @@
-package application.controllers;
-
-import application.Main;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+package application;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,9 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.scene.control.Button;
-import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -44,50 +38,19 @@ public class AccueilController implements Initializable{
 	@FXML private DatePicker debut_sejour;
 	@FXML private DatePicker fin_sejour;
 	@FXML private Text txtWarning;
-
-	@FXML private Button connexion, profil;
+	@FXML private Button proposerVoyage, connexion;
 
 	private ArrayList<Voyage> listAllVoyages;
 	private ArrayList<Voyage> listVoyagesResults;
-
-	@FXML private ImageView img1,img2,img3,img4,img5;
-
-
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		contact.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		Image image1 = new Image("https://www.horizon-provence.com/pont-avignon/photos/pont-saint-benezet08.jpg");
-        ImageView img1 = new ImageView();
-        img1.setImage(image1);
-        Image image2 = new Image("https://www.rustica.fr/images/247913j-l760-h550.jpg");
-        img2.setImage(image2);
-        Image image3 = new Image("https://www.josera.fr/media/magefan_blog/Pferd_Ausritt_shutterstock_1883230375_Ratgeber-Headerbild_1905x1040.jpg");
-        img3.setImage(image3);
-        Image image4 = new Image("https://www.cabanes-de-france.com/wp-content/uploads/2018/06/clarisse-creaphotos-7.jpg");
-        img4.setImage(image4);
-        Image image5 = new Image("https://resize2.prod.docfr.doc-media.fr/rcrop/480,280,center-middle/img/var/doctissimo/storage/images/fr/www/famille/maison/jardinage/661232-2-fre-FR/jardinage.jpg");
-        img5.setImage(image5);
 
 		// get all voyages
 		listAllVoyages = this.getAllVoyages();
-
-		// init datepickers
-		LocalDate today = LocalDate.now();
-		updateDatePicker(debut_sejour, today);
-		updateDatePicker(fin_sejour, today);
-
-		debut_sejour.valueProperty().addListener((ov, oldValue, newValue) -> {
-			updateDatePicker(fin_sejour, debut_sejour.getValue());
-			if (fin_sejour.getValue().isBefore(debut_sejour.getValue())){
-				fin_sejour.setValue(debut_sejour.getValue());
-			}
-		});
 	}
-
-
-
-        
-
+	
 	@FXML
 	protected void onSearchButtonClick(ActionEvent event) throws IOException {
 		if (txtRecherche.getText().length() > 1) {
@@ -114,7 +77,7 @@ public class AccueilController implements Initializable{
 	}
 
 	public ArrayList<Voyage> getAllVoyages(){
-		String fileName = "src/application/assets/voyages.csv";
+		String fileName = "src/application/assets/voyages10.csv";
 
 		ArrayList<Voyage> voyages = null;
 		try {
@@ -162,37 +125,11 @@ public class AccueilController implements Initializable{
 			}
 		} ).start();
 	}
-
-	public void updateDatePicker(DatePicker dp, LocalDate startLocalDate){
-		// restriction sur date picker
-		dp.setDayCellFactory(picker -> new DateCell() {
-			public void updateItem(LocalDate date, boolean empty) {
-				super.updateItem(date, empty);
-				setDisable(empty || date.compareTo(startLocalDate) < 0 );
-			}
-		});
-	}
 	
-	public void goToAccueil(ActionEvent event) throws IOException {
+	public void proposerVoyage() {
+		Scene scene = proposerVoyage.getScene();
 		try {
-			System.out.println("Vous �tes sur la page d'accueil");
-
-			Parent Accueil = FXMLLoader.load(getClass().getResource("/application/views/Accueil.fxml"));
-			Scene AccueilScene = new Scene(Accueil);
-			
-			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			settStage.setScene(AccueilScene);
-			settStage.show();
-		} 
-		catch (Exception e) {
-			System.err.println(e.getLocalizedMessage());
-		}
-	}
-
-	public void connexion() {
-		Scene scene = connexion.getScene();
-		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/application/views/Connexion.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("views/DetailSejourHote.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {
@@ -200,10 +137,10 @@ public class AccueilController implements Initializable{
 		}
 	}
 	
-	public void profilVoyageur() {
-		Scene scene = profil.getScene();
+	public void connexion() {
+		Scene scene = connexion.getScene();
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("views/ProfilVoyageur.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("views/Connexion.fxml"));
 			scene.setRoot(root);
 		} 
 		catch (IOException e) {
