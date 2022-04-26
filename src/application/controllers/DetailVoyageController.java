@@ -2,6 +2,7 @@ package application.controllers;
 
 import application.Main;
 import application.models.Voyage;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -34,7 +36,7 @@ public class DetailVoyageController {
     @FXML Text txtLogement;
     @FXML ImageView imgLogement;
     @FXML ImageView imgContreparties;
-
+    int idUtilisateurConnecte = 0;
 
     public void init() {
         File file = new File("src/application/assets/images/ville/" + voyage.getVille() + ".png");
@@ -72,4 +74,44 @@ public class DetailVoyageController {
             e.printStackTrace();
         }
     }
+    
+    public void onBtnContacterClicked(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/DiscussionVoyageur.fxml"));
+		Parent root = (Parent) loader.load();
+		DiscussionController secController = (DiscussionController)loader.getController();
+		
+		secController.idVoyage = voyage.getIdVoyage();
+		secController.idVoyageur = idUtilisateurConnecte;
+		secController.idHote = voyage.getIdHote();
+		secController.lireFichierChat(voyage.getIdVoyage(),idUtilisateurConnecte,voyage.getIdHote());
+		
+		Stage stage = new Stage();
+		stage.setTitle("Communication");
+		stage.initModality(Modality.APPLICATION_MODAL);  
+		stage.setScene(new Scene(root));
+		stage.show();
+		
+		
+    }
+    
+    public void onMenuButtonProfilClicked(ActionEvent event) {
+		
+	}
+	public void onMenuButtonMessagerieClicked(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ListeDiscussions.fxml"));
+		Parent root = (Parent) loader.load();
+		DiscussionController secController = loader.getController();
+		
+		secController.idUtilisateurConnecte = idUtilisateurConnecte;
+		secController.setUpMessagerie();
+		
+		Stage stage = new Stage();
+		stage.setTitle("Messagerie");
+		stage.initModality(Modality.APPLICATION_MODAL);  
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+	public void onMenuButtonDeconnexionClicked(ActionEvent event) {
+		
+	}
 }
