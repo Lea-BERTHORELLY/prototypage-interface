@@ -38,6 +38,10 @@ public class Voyage {
 
     //  getters, setters, toString
 
+    public String getIdHote() {
+        return heure;
+    }
+    
     public String getVille() {
         return ville;
     }

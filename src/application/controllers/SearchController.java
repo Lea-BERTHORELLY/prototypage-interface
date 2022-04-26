@@ -1,6 +1,7 @@
 package application.controllers;
 
 import application.Main;
+import application.models.ConnexionParam;
 import application.models.Voyage;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -20,9 +21,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import com.opencsv.bean.CsvToBeanBuilder;
 
 public class SearchController {
 
@@ -45,6 +50,8 @@ public class SearchController {
     private Text txtResults;
     private boolean isAddingCards = false;
     private int startIndexToAddCards;
+    
+    @FXML private Text idHoteConnecte,typeConnexion;
 
     private ArrayList<Voyage> listAllVoyages;
     private ArrayList<Voyage> listVoyagesResults2;
@@ -77,6 +84,71 @@ public class SearchController {
 
 
         // todo: initialize map effects
+    }
+    
+    @FXML
+    public void initialize() {
+    
+    	ConnexionParam param = ConnexionParam.getInstance();
+        idHoteConnecte.setText(param.getId());
+        typeConnexion.setText(param.getTypeConnexion());
+        
+        System.out.println("init :  identifiant = "+param.getId());
+		System.out.println("typeConnexion = "+param.getTypeConnexion());
+		//Afficher tous les voyages (sans filtre) du voyageur/hote
+		
+		// get all voyages (csv)
+		listAllVoyages = this.getAllVoyages();
+		
+		listVoyagesResults2 = searchVoyagesSansFiltre(); //avec recherche id hote
+		
+		String nbSejourString = String.valueOf(listVoyagesResults2.size());
+		
+		//nbSejour.setText(nbSejourString);
+		
+		System.out.println("listVoyagesResults2.size() = "+listVoyagesResults2.size());
+		addCardToTripListView(listVoyagesResults2.size(), 0);
+		/*
+		listVoyagesResults2 = searchVoyagesResults2();
+        setListVoyagesResults(listVoyagesResults2);
+        displaySearchResults();
+        */
+    }
+    
+    public ArrayList<Voyage> getAllVoyages(){
+		String fileName = "src/application/assets/voyages.csv";
+
+		ArrayList<Voyage> voyages = null;
+		try {
+			voyages = (ArrayList<Voyage>) new CsvToBeanBuilder(new FileReader(fileName)).withSeparator(';')
+					.withType(Voyage.class)
+					.build()
+					.parse();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+//        for (Voyage v: voyages) {System.out.println(v.getVille() + " : " + v.getContreparties());}
+		return voyages;
+	}
+    
+public ArrayList<Voyage> searchVoyagesSansFiltre(){
+    	
+    	ArrayList<Voyage> results = new ArrayList<Voyage>();
+    	
+    	System.out.println("size voyage = "+listAllVoyages.size());
+
+        for (Voyage v: listAllVoyages){
+        	System.out.println("v.getIdHote() = "+v.getIdHote() + ", idHoteConnecte = "+idHoteConnecte.getText());
+        	if(v.getIdHote().equals(idHoteConnecte.getText())) {
+        		System.out.println("+1");
+        		results.add(v);
+        	}
+        	else {
+        		System.out.println("ko");
+        	}
+        }
+        System.out.println(results.size());
+        return results;
     }
 
     @FXML
@@ -144,9 +216,14 @@ public class SearchController {
                 heures.setText(listVoyagesResults2.get(startIndex + i).getHeure() + " h/j");
                 indexForTest.setText("(" + (startIndex + i + 1) + ")");
 
+                // styles
+//                cardsToAdd[i].setStyle("");
+
                 // add some effect
                 cardsToAdd[i].setOnMouseEntered(event -> {
-                    cardsToAdd[j].setStyle("-fx-border-color: grey");
+                    cardsToAdd[j].setStyle("-fx-border-color: grey;" +
+                            "-fx-background-color: white;" +
+                            "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
                 });
                 cardsToAdd[i].setOnMouseExited(event -> {
                     cardsToAdd[j].setStyle("-fx-border-color: lightgrey");
@@ -277,5 +354,20 @@ public class SearchController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    public void goToAccueil(MouseEvent event) throws IOException {
+        try {
+            Parent Accueil = FXMLLoader.load(Main.class.getResource("views/Accueil.fxml"));
+            Scene AccueilScene = new Scene(Accueil);
+
+            Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            settStage.setScene(AccueilScene);
+            settStage.show();
+            System.out.println("Vous êtes sur la page d'accueil");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

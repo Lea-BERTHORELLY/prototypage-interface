@@ -14,7 +14,7 @@ public class Main extends Application {
 
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("views/Accueil.fxml"));
 			Scene scene = new Scene(root,1280,720);
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			/* scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm()); */
 			primaryStage.setTitle("Adeona");
 			primaryStage.setScene(scene);
 			primaryStage.show();
