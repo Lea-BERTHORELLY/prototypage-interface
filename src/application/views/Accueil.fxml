@@ -58,6 +58,6 @@
       		<Image url="https://resize2.prod.docfr.doc-media.fr/rcrop/480,280,center-middle/img/var/doctissimo/storage/images/fr/www/famille/maison/jardinage/661232-2-fre-FR/jardinage.jpg" />
       	</image>
       	</ImageView>
-      <Button fx:id="bouton_accueil" layoutX="56.0" layoutY="69.0" mnemonicParsing="false" onAction="#goToAccueil" text="Adeona" />
+      <Button fx:id="bouton_accueil" layoutX="56.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToAccueil" text="Adeona" />
    </children>
 </AnchorPane>

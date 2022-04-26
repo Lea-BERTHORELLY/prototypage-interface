@@ -278,4 +278,18 @@ public class SearchController {
         stage.centerOnScreen();
         stage.show();
     }
+    public void goToAccueil(ActionEvent event) throws IOException {
+		try {
+			System.out.println("Vous êtes sur la page d'accueil");
+			Parent Accueil = FXMLLoader.load(getClass().getResource("/application/views/Accueil.fxml"));
+			Scene AccueilScene = new Scene(Accueil);
+			
+			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			settStage.setScene(AccueilScene);
+			settStage.show();
+		} 
+		catch (Exception e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+	}
 }

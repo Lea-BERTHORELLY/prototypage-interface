@@ -171,7 +171,7 @@ public class AccueilController implements Initializable{
 	public void goToAccueil(ActionEvent event) throws IOException {
 		try {
 			System.out.println("Vous �tes sur la page d'accueil");
-			Parent Accueil = FXMLLoader.load(getClass().getResource("views/Accueil.fxml"));
+			Parent Accueil = FXMLLoader.load(getClass().getResource("/application/views/Accueil.fxml"));
 			Scene AccueilScene = new Scene(Accueil);
 			
 			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

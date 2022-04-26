@@ -1,13 +1,20 @@
 package application.controllers;
 
 import application.models.Voyage;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 public class DetailVoyageController {
 
@@ -49,4 +56,18 @@ public class DetailVoyageController {
     public void setVoyage(Voyage voyage){
         this.voyage = voyage;
     }
+    public void goToAccueil(ActionEvent event) throws IOException {
+		try {
+			System.out.println("Vous �tes sur la page d'accueil");
+			Parent Accueil = FXMLLoader.load(getClass().getResource("/application/views/Accueil.fxml"));
+			Scene AccueilScene = new Scene(Accueil);
+			
+			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			settStage.setScene(AccueilScene);
+			settStage.show();
+		} 
+		catch (Exception e) {
+			System.err.println(e.getLocalizedMessage());
+		}
+	}
 }
