@@ -10,6 +10,27 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ConceptAdeonaController">
    <children>
+   <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="141.0" layoutY="169.0" pickOnBounds="true">
+         <image>
+            <Image url="https://www.horizon-provence.com/pont-avignon/photos/pont-saint-benezet08.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="341.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+            <Image url="https://www.rustica.fr/images/247913j-l760-h550.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://www.josera.fr/media/magefan_blog/Pferd_Ausritt_shutterstock_1883230375_Ratgeber-Headerbild_1905x1040.jpg" />
+      	</image></ImageView>
+      <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="741.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://www.cabanes-de-france.com/wp-content/uploads/2018/06/clarisse-creaphotos-7.jpg" />
+      	</image></ImageView>
+      <ImageView fx:id="img5" fitHeight="150.0" fitWidth="200.0" layoutX="941.0" layoutY="169.0" pickOnBounds="true">
+      	<image>
+      		<Image url="https://resize2.prod.docfr.doc-media.fr/rcrop/480,280,center-middle/img/var/doctissimo/storage/images/fr/www/famille/maison/jardinage/661232-2-fre-FR/jardinage.jpg" />
+      	</image>
+      	</ImageView>
       <Text layoutX="10.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concept d'Adeona" textAlignment="CENTER" wrappingWidth="1280.875">
          <font>
             <Font size="24.0" />
@@ -33,11 +54,6 @@
       </Text>
       <Button fx:id="btnProposerSejour" layoutX="455.0" layoutY="628.0" mnemonicParsing="false" onAction="#proposerSejour" text="Proposer un séjour" />
    	  <Button fx:id="btnVoirSejour" layoutX="673.0" layoutY="628.0" mnemonicParsing="false" onAction="#voirSejour" text="Voir vos séjours" />
-      <ImageView fitHeight="203.0" fitWidth="919.0" layoutX="463.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../OneDrive/M1/S2/Prototypage%20et%20interface%20utilisateur/nomade.png" />
-         </image>
-      </ImageView>
    </children>
    <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">
      <children>
