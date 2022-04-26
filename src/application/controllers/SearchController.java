@@ -144,9 +144,14 @@ public class SearchController {
                 heures.setText(listVoyagesResults2.get(startIndex + i).getHeure() + " h/j");
                 indexForTest.setText("(" + (startIndex + i + 1) + ")");
 
+                // styles
+//                cardsToAdd[i].setStyle("");
+
                 // add some effect
                 cardsToAdd[i].setOnMouseEntered(event -> {
-                    cardsToAdd[j].setStyle("-fx-border-color: grey");
+                    cardsToAdd[j].setStyle("-fx-border-color: grey;" +
+                            "-fx-background-color: white;" +
+                            "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
                 });
                 cardsToAdd[i].setOnMouseExited(event -> {
                     cardsToAdd[j].setStyle("-fx-border-color: lightgrey");
@@ -277,5 +282,20 @@ public class SearchController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    public void goToAccueil(MouseEvent event) throws IOException {
+        try {
+            Parent Accueil = FXMLLoader.load(Main.class.getResource("views/Accueil.fxml"));
+            Scene AccueilScene = new Scene(Accueil);
+
+            Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            settStage.setScene(AccueilScene);
+            settStage.show();
+            System.out.println("Vous êtes sur la page d'accueil");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
