@@ -47,6 +47,9 @@ public class AccueilController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		contact.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
+		
+		System.out.println("dans initialize ");
+		
 		// get all voyages
 		listAllVoyages = this.getAllVoyages();
 	}
@@ -77,7 +80,8 @@ public class AccueilController implements Initializable{
 	}
 
 	public ArrayList<Voyage> getAllVoyages(){
-		String fileName = "src/application/assets/voyages10.csv";
+		System.out.println("dans getAllVoyages ");
+		String fileName = "src/application/assets/voyages5.csv";
 
 		ArrayList<Voyage> voyages = null;
 		try {
@@ -88,7 +92,7 @@ public class AccueilController implements Initializable{
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-//        for (Voyage v: voyages) {System.out.println(v.getVille() + " : " + v.getContreparties());}
+        for (Voyage v: voyages) {System.out.println(v.getVille() + " : " + v.getContreparties());}
 		return voyages;
 	}
 

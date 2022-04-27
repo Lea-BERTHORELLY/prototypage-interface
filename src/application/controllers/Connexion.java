@@ -39,6 +39,9 @@ public class Connexion {
 				System.out.println("hote selectionné");
 				typeConnexion="Hote";
 				
+				ConnexionParam param = ConnexionParam.getInstance();
+		        param.setConnexion(id.getText(),typeConnexion);
+				
 				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../views/ConceptAdeona.fxml"));
 				Scene scene = valider.getScene();
 				scene.setRoot(root);

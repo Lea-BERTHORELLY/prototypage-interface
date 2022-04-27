@@ -73,6 +73,7 @@ public class AccueilController implements Initializable{
 
 		// get all voyages
 		listAllVoyages = this.getAllVoyages();
+		System.out.println("dans initialize ");
 
 		// init datepickers
 		LocalDate today = LocalDate.now();
