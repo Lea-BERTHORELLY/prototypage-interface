@@ -36,13 +36,13 @@ public class DetailVoyageController {
     @FXML Text txtLogement;
     @FXML ImageView imgLogement;
     @FXML ImageView imgContreparties;
-    int idUtilisateurConnecte = 0;
+    int idUtilisateurConnecte = 1;
 
     public void init() {
         File file = new File("src/application/assets/images/ville/" + voyage.getVille() + ".png");
         Image image = new Image(file.toURI().toString());
         imgVoyage.setImage(image);
-        txtTitle.setText(voyage.getContreparties() + " à " + voyage.getVille());
+        txtTitle.setText(voyage.getContreparties() + " � " + voyage.getVille());
         txtService.setText(voyage.getContreparties());
         txtHeures.setText(voyage.getHeure() + "h/j");
 
@@ -68,7 +68,7 @@ public class DetailVoyageController {
             Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             settStage.setScene(AccueilScene);
             settStage.show();
-            System.out.println("Vous êtes sur la page d'accueil");
+            System.out.println("Vous etes sur la page d'accueil");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -82,8 +82,8 @@ public class DetailVoyageController {
 		
 		secController.idVoyage = voyage.getIdVoyage();
 		secController.idVoyageur = idUtilisateurConnecte;
-		secController.idHote = voyage.getIdHote();
-		secController.lireFichierChat(voyage.getIdVoyage(),idUtilisateurConnecte,voyage.getIdHote());
+		secController.idHote = voyage.getIdHote1();
+		secController.lireFichierChat(voyage.getIdVoyage(),idUtilisateurConnecte,voyage.getIdHote1());
 		
 		Stage stage = new Stage();
 		stage.setTitle("Communication");
