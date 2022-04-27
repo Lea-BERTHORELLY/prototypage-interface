@@ -1,31 +1,32 @@
-Moscou;2;Chambre;Bricolage, Babysitting;Pas d animaux, Non fumeur;Piscine, Blanchissage;Transfert possible;Pension complète;29/7/2023;30/7/2023;-99;21;2;0
-Strasbourg;4;Cabane dans un arbre;Jardinage;;Blanchissage, Wifi, Parking;Pas de transfert;Petit déjeuner;19/5/2022;29/5/2022;-99;57;2;1
-Toulouse;6;Cabane dans un arbre;Donner des cours d anglais;Pas d animaux;Parking, Wifi;Pas de transfert;Pension complète;2/9/2022;7/9/2022;-99;68;2;2
-Seville;4;Cabane dans un arbre;Promener les chiens;;Piscine;Transfert possible;Petit déjeuner;17/10/2024;23/10/2024;-99;13;3;3
-Paris;5;Chambre;Donner des cours d anglais;Pas d animaux;Wifi, Piscine, Blanchissage;Pas de transfert;Petit déjeuner;15/5/2023;29/5/2023;-99;61;3;4
-Toulouse;3;Chambre;Bricolage, Babysitting;Pas d animaux, Non fumeur;Wifi;Transfert possible;Pension complète;12/9/2024;25/9/2024;-99;87;1;5
-Seville;2;Tente;Donner des cours d anglais, Jardinage;Pas d animaux, Non fumeur;Blanchissage;Transfert possible;Pension complète;13/12/2023;31/12/2023;-99;31;3;6
+
+Moscou;2;Chambre;Bricolage, Babysitting;Pas d animaux, Non fumeur;Piscine, Blanchissage;Transfert possible;Pension complÃ¨te;29/7/2023;30/7/2023;-99;21;2;0
+Strasbourg;4;Cabane dans un arbre;Jardinage;;Blanchissage, Wifi, Parking;Pas de transfert;Petit dÃ©jeuner;19/5/2022;29/5/2022;-99;57;2;1
+Toulouse;6;Cabane dans un arbre;Donner des cours d anglais;Pas d animaux;Parking, Wifi;Pas de transfert;Pension complÃ¨te;2/9/2022;7/9/2022;-99;68;2;2
+Seville;4;Cabane dans un arbre;Promener les chiens;;Piscine;Transfert possible;Petit dÃ©jeuner;17/10/2024;23/10/2024;-99;13;3;3
+Paris;5;Chambre;Donner des cours d anglais;Pas d animaux;Wifi, Piscine, Blanchissage;Pas de transfert;Petit dÃ©jeuner;15/5/2023;29/5/2023;-99;61;3;4
+Toulouse;3;Chambre;Bricolage, Babysitting;Pas d animaux, Non fumeur;Wifi;Transfert possible;Pension complÃ¨te;12/9/2024;25/9/2024;-99;87;1;5
+Seville;2;Tente;Donner des cours d anglais, Jardinage;Pas d animaux, Non fumeur;Blanchissage;Transfert possible;Pension complÃ¨te;13/12/2023;31/12/2023;-99;31;3;6
 Strasbourg;5;Tente;Donner des cours d anglais;Non fumeur;Wifi;Pas de transfert;Demi-pension;30/6/2024;31/7/2024;-99;68;3;7
 Marseille;2;Chambre;Donner des cours d anglais;Non fumeur, Pas d animaux;Parking, Piscine, Wifi;Transfert possible;Demi-pension;3/3/2023;21/3/2023;-99;54;2;8
 Toulouse;2;Cabane dans un arbre;Bricolage, Donner des cours d anglais;Pas d animaux, Non fumeur;Parking, Piscine;Pas de transfert;Demi-pension;22/10/2024;25/10/2024;-99;10;3;9
-Avignon;3;Chambre;Donner des cours d anglais;;Wifi;Pas de transfert;Pension complète;5/11/2022;26/11/2022;-99;75;2;10
-Draguignan;4;Tente;Bricolage, Babysitting;Non fumeur;Piscine, Blanchissage;Pas de transfert;Petit déjeuner;9/9/2022;10/9/2022;-99;96;1;11
+Avignon;3;Chambre;Donner des cours d anglais;;Wifi;Pas de transfert;Pension complÃ¨te;5/11/2022;26/11/2022;-99;75;2;10
+Draguignan;4;Tente;Bricolage, Babysitting;Non fumeur;Piscine, Blanchissage;Pas de transfert;Petit dÃ©jeuner;9/9/2022;10/9/2022;-99;96;1;11
 Chartres;4;Tente;Babysitting;;Wifi;Transfert possible;Demi-pension;24/6/2024;31/6/2024;-99;13;1;12
-Berlin;5;Chambre;Bricolage;;Parking;Transfert possible;Pension complète;27/10/2022;28/10/2022;-99;42;1;13
-Marseille;2;Tente;Donner des cours d anglais;Pas d animaux, Non fumeur;Wifi, Blanchissage;Pas de transfert;Petit déjeuner;16/6/2023;17/6/2023;-99;58;3;14
-Berlin;5;Chambre;Jardinage, Babysitting;;Parking;Pas de transfert;Pension complète;13/10/2024;18/10/2024;-99;28;2;15
-Avignon;3;Cabane dans un arbre;Promener les chiens, Babysitting;;Piscine, Blanchissage;Transfert possible;Pension complète;14/3/2023;27/3/2023;-99;46;2;16
-Berlin;5;Cabane dans un arbre;Babysitting, Bricolage;Non fumeur;Blanchissage, Balade à cheval, Wifi;Pas de transfert;Demi-pension;11/9/2024;12/9/2024;-99;84;1;17
-Toulouse;5;Cabane dans un arbre;Promener les chiens;Pas d animaux, Non fumeur;Parking, Balade à cheval, Wifi;Transfert possible;Pension complète;18/10/2023;27/10/2023;-99;16;3;18
-Seville;6;Tente;Promener les chiens;;Parking, Balade à cheval;Transfert possible;Petit déjeuner;30/6/2022;31/7/2022;-99;44;1;19
-Seville;2;Tente;Jardinage;;Parking;Transfert possible;Petit déjeuner;16/6/2022;17/6/2022;-99;54;2;20
-Moscou;6;Chambre;Promener les chiens;;Wifi, Piscine, Balade à cheval;Transfert possible;Petit déjeuner;29/5/2023;30/5/2023;-99;56;3;21
-Paris;2;Chambre;Bricolage;Pas d animaux;Blanchissage;Transfert possible;Pension complète;24/7/2024;25/7/2024;-99;62;2;22
-Strasbourg;4;Cabane dans un arbre;Bricolage;Pas d animaux, Non fumeur;Balade à cheval;Pas de transfert;Petit déjeuner;29/10/2024;30/10/2024;-99;83;1;23
-Draguignan;2;Cabane dans un arbre;Promener les chiens, Babysitting;Non fumeur;Wifi, Piscine;Pas de transfert;Petit déjeuner;18/1/2024;19/1/2024;-99;70;3;24
-Marseille;6;Tente;Babysitting, Donner des cours d anglais;Non fumeur;Wifi, Balade à cheval;Transfert possible;Pension complète;24/8/2023;25/8/2023;-99;80;1;25
-Marseille;2;Chambre;Jardinage, Babysitting;;Wifi, Piscine, Parking;Transfert possible;Petit déjeuner;6/9/2023;24/9/2023;-99;99;1;26
-Toulouse;6;Chambre;Bricolage, Promener les chiens;;Blanchissage, Wifi, Piscine;Transfert possible;Pension complète;8/4/2022;27/4/2022;-99;54;3;27
-Moscou;3;Tente;Donner des cours d anglais;;Piscine, Parking, Balade à cheval;Transfert possible;Pension complète;26/1/2024;27/1/2024;-99;24;1;28
+Berlin;5;Chambre;Bricolage;;Parking;Transfert possible;Pension complÃ¨te;27/10/2022;28/10/2022;-99;42;1;13
+Marseille;2;Tente;Donner des cours d anglais;Pas d animaux, Non fumeur;Wifi, Blanchissage;Pas de transfert;Petit dÃ©jeuner;16/6/2023;17/6/2023;-99;58;3;14
+Berlin;5;Chambre;Jardinage, Babysitting;;Parking;Pas de transfert;Pension complÃ¨te;13/10/2024;18/10/2024;-99;28;2;15
+Avignon;3;Cabane dans un arbre;Promener les chiens, Babysitting;;Piscine, Blanchissage;Transfert possible;Pension complÃ¨te;14/3/2023;27/3/2023;-99;46;2;16
+Berlin;5;Cabane dans un arbre;Babysitting, Bricolage;Non fumeur;Blanchissage, Balade Ã  cheval, Wifi;Pas de transfert;Demi-pension;11/9/2024;12/9/2024;-99;84;1;17
+Toulouse;5;Cabane dans un arbre;Promener les chiens;Pas d animaux, Non fumeur;Parking, Balade Ã  cheval, Wifi;Transfert possible;Pension complÃ¨te;18/10/2023;27/10/2023;-99;16;3;18
+Seville;6;Tente;Promener les chiens;;Parking, Balade Ã  cheval;Transfert possible;Petit dÃ©jeuner;30/6/2022;31/7/2022;-99;44;1;19
+Seville;2;Tente;Jardinage;;Parking;Transfert possible;Petit dÃ©jeuner;16/6/2022;17/6/2022;-99;54;2;20
+Moscou;6;Chambre;Promener les chiens;;Wifi, Piscine, Balade Ã  cheval;Transfert possible;Petit dÃ©jeuner;29/5/2023;30/5/2023;-99;56;3;21
+Paris;2;Chambre;Bricolage;Pas d animaux;Blanchissage;Transfert possible;Pension complÃ¨te;24/7/2024;25/7/2024;-99;62;2;22
+Strasbourg;4;Cabane dans un arbre;Bricolage;Pas d animaux, Non fumeur;Balade Ã  cheval;Pas de transfert;Petit dÃ©jeuner;29/10/2024;30/10/2024;-99;83;1;23
+Draguignan;2;Cabane dans un arbre;Promener les chiens, Babysitting;Non fumeur;Wifi, Piscine;Pas de transfert;Petit dÃ©jeuner;18/1/2024;19/1/2024;-99;70;3;24
+Marseille;6;Tente;Babysitting, Donner des cours d anglais;Non fumeur;Wifi, Balade Ã  cheval;Transfert possible;Pension complÃ¨te;24/8/2023;25/8/2023;-99;80;1;25
+Marseille;2;Chambre;Jardinage, Babysitting;;Wifi, Piscine, Parking;Transfert possible;Petit dÃ©jeuner;6/9/2023;24/9/2023;-99;99;1;26
+Toulouse;6;Chambre;Bricolage, Promener les chiens;;Blanchissage, Wifi, Piscine;Transfert possible;Pension complÃ¨te;8/4/2022;27/4/2022;-99;54;3;27
+Moscou;3;Tente;Donner des cours d anglais;;Piscine, Parking, Balade Ã  cheval;Transfert possible;Pension complÃ¨te;26/1/2024;27/1/2024;-99;24;1;28
 Moscou;5;Tente;Babysitting, Bricolage;Non fumeur, Pas d animaux;Wifi, Parking;Pas de transfert;Demi-pension;17/12/2022;27/12/2022;-99;41;1;29
-Strasbourg;5;Chambre;Bricolage;Non fumeur;Blanchissage, Wifi, Balade à cheval;Pas de transfert;Pension complète;23/11/2022;24/11/2022;-99;77;3;30
+Strasbourg;5;Chambre;Bricolage;Non fumeur;Blanchissage, Wifi, Balade Ã  cheval;Pas de transfert;Pension complÃ¨te;23/11/2022;24/11/2022;-99;77;3;30

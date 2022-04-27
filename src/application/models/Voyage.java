@@ -35,7 +35,13 @@ public class Voyage {
 
     @CsvBindByPosition(position = 9)
     private String dateDepart;
-
+    
+    @CsvBindByPosition(position = 11)
+    private int idHote;
+    
+    @CsvBindByPosition(position = 13)
+    private int idVoyage;
+    
     //  getters, setters, toString
 
     public String getIdHote() {
@@ -80,5 +86,13 @@ public class Voyage {
 
     public String getDateDepart() {
         return dateDepart;
+    }
+    
+    public int getIdHote() {
+        return idHote;
+    }
+    
+    public int getIdVoyage() {
+        return idVoyage;
     }
 }

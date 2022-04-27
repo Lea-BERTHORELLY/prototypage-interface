@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -55,7 +56,7 @@ public class SearchController {
 
     private ArrayList<Voyage> listAllVoyages;
     private ArrayList<Voyage> listVoyagesResults2;
-
+    int idUtilisateurConnecte = 1;
     public void init() {
         setMap();
         displaySearchResults();
@@ -370,4 +371,26 @@ public ArrayList<Voyage> searchVoyagesSansFiltre(){
             e.printStackTrace();
         }
     }
+    
+    public void onMenuButtonProfilClicked(ActionEvent event) {
+		
+   	}
+   	public void onMenuButtonMessagerieClicked(ActionEvent event) throws IOException {
+   		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ListeDiscussions.fxml"));
+   		Parent root = (Parent) loader.load();
+   		DiscussionController secController = loader.getController();
+   		
+   		secController.idUtilisateurConnecte = idUtilisateurConnecte;
+   		secController.setUpMessagerie();
+   		
+   		Stage stage = new Stage();
+   		stage.setTitle("Messagerie");
+   		stage.initModality(Modality.APPLICATION_MODAL);  
+   		stage.setScene(new Scene(root));
+   		stage.show();
+   	}
+   	public void onMenuButtonDeconnexionClicked(ActionEvent event) {
+   		
+   	}
+   
 }

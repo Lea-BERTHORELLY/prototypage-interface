@@ -9,6 +9,20 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DetailSejourHoteController">
    <children>
+    <MenuButton fx:id="buttonMenu" layoutX="1161.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-mark-color: transparent;">
+	   	  <graphic>
+	        <ImageView fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+	          <image>
+	            <Image url="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" />
+	          </image>
+	        </ImageView>
+	      </graphic>
+	       <items>
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonProfilClicked" text="Profil" />
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonMessagerieClicked" text="Messagerie" />
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonProfilClicked" text="Déconnexion" />
+	       </items>
+      </MenuButton>
       <Text layoutX="50.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation :" wrappingWidth="94.0" />
       <Text layoutX="50.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Période :" />
       <Text layoutX="50.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service(s) :" />

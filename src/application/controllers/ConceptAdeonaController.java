@@ -5,9 +5,13 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+
+import application.Main;
+import javafx.event.ActionEvent;
 import application.models.ConnexionParam;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -19,6 +23,8 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ConceptAdeonaController {
 	
@@ -29,6 +35,8 @@ public class ConceptAdeonaController {
 	private Button btnVoirSejour;
 	
 	@FXML private ImageView img1,img2,img3,img4,img5;
+	
+	int idUtilisateurConnecte = 1;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Image image1 = new Image("https://www.horizon-provence.com/pont-avignon/photos/pont-saint-benezet08.jpg");
@@ -64,6 +72,26 @@ public class ConceptAdeonaController {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void onMenuButtonProfilClicked(ActionEvent event) {
+		
+	}
+	public void onMenuButtonMessagerieClicked(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ListeDiscussions.fxml"));
+		Parent root = (Parent) loader.load();
+		DiscussionController secController = loader.getController();
+		secController.idUtilisateurConnecte = idUtilisateurConnecte;
+		secController.setUpMessagerie();
+		
+		Stage stage = new Stage();
+		stage.setTitle("Messagerie");
+		stage.initModality(Modality.APPLICATION_MODAL);  
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+	public void onMenuButtonDeconnexionClicked(ActionEvent event) {
+		
 	}
 }
 

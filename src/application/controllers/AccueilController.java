@@ -38,6 +38,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AccueilController implements Initializable{
@@ -53,7 +54,7 @@ public class AccueilController implements Initializable{
 	private ArrayList<Voyage> listVoyagesResults;
 
 	@FXML private ImageView img1,img2,img3,img4,img5;
-
+	int idUtilisateurConnecte = 1;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -212,5 +213,26 @@ public class AccueilController implements Initializable{
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+
+	public void onMenuButtonProfilClicked(ActionEvent event) {
+		
+	}
+	public void onMenuButtonMessagerieClicked(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ListeDiscussions.fxml"));
+		Parent root = (Parent) loader.load();
+		DiscussionController secController = loader.getController();
+		secController.idUtilisateurConnecte = idUtilisateurConnecte;
+		secController.setUpMessagerie();
+		
+		Stage stage = new Stage();
+		stage.setTitle("Messagerie");
+		stage.initModality(Modality.APPLICATION_MODAL);  
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+	public void onMenuButtonDeconnexionClicked(ActionEvent event) {
+		
 	}
 }
