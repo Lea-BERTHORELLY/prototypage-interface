@@ -28,7 +28,7 @@ public class ProfilVoyageurController {
 	private Stage stage;
 	private Scene scene;
 	
-	private int idUtilisateur = 36;
+	int idUtilisateur = 36;
 	
 	@FXML Text textPrenomNom;
 	@FXML Text textPays;
@@ -53,6 +53,7 @@ public class ProfilVoyageurController {
 		stage.show();
 		
 		ProfilVoyageurController secController = loader.getController();
+		secController.idUtilisateur = idUtilisateur;
 		secController.miseEnPlaceModifierProfil();
 	}
 	
@@ -60,7 +61,7 @@ public class ProfilVoyageurController {
 	public void miseEnPlaceProfil() {
 		try {
 			// Lit le fichier profil.csv
-	        FileReader filereader = new FileReader("profil.csv");
+	        FileReader filereader = new FileReader("src/application/assets/profil.csv");
 	        CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
 	        CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parser).build();
 	        String[] nextRecord = null;
@@ -86,7 +87,7 @@ public class ProfilVoyageurController {
 	public void miseEnPlaceModifierProfil() {
 		try {
 			
-	        FileReader filereader = new FileReader("profil.csv");
+	        FileReader filereader = new FileReader("src/application/assets/profil.csv");
 	        CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
 	        CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parser).build();
 	        String[] nextRecord = null;
@@ -113,7 +114,7 @@ public class ProfilVoyageurController {
 	public void onValiderModificationClicked(ActionEvent event) throws IOException, CsvValidationException {
 		
 		// Lis le fichier csv
-		FileReader filereader = new FileReader("profil.csv");
+		FileReader filereader = new FileReader("src/application/assets/profil.csv");
         CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
         CSVReader csvReader = new CSVReaderBuilder(filereader).withCSVParser(parser).build();
         String[] nextRecord = null;
@@ -139,7 +140,7 @@ public class ProfilVoyageurController {
         	i++;
         }
         
-        FileWriter outputfile = new FileWriter("profil.csv");
+        FileWriter outputfile = new FileWriter("src/application/assets/profil.csv");
         
         CSVWriter writer = new CSVWriter(outputfile, ';',
                                          CSVWriter.NO_QUOTE_CHARACTER,
@@ -154,11 +155,12 @@ public class ProfilVoyageurController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/ProfilVoyageur.fxml"));
 		Parent root = (Parent) loader.load();
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root,1280,720);
+		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 		
 		ProfilVoyageurController secController = loader.getController();
+		secController.idUtilisateur = idUtilisateur;
 		secController.miseEnPlaceProfil();
 	}
 	

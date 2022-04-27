@@ -88,7 +88,7 @@ public class Voyage {
         return dateDepart;
     }
     
-    public int getIdHote() {
+    public int getIdHote1() {
         return idHote;
     }
     

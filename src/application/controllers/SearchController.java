@@ -68,6 +68,7 @@ public class SearchController {
 
         // init datepickers
         LocalDate today = LocalDate.now();
+        
         updateDatePicker(debut_sejour2, today);
         updateDatePicker(fin_sejour2, today);
 
@@ -175,8 +176,8 @@ public ArrayList<Voyage> searchVoyagesSansFiltre(){
 
     public void displayResultsQty() {
         // gère le nombre de résultats
-        if (listVoyagesResults2.size() == 0) txtResults.setText("Désolé, nous n'avons trouvé aucun résultat...");
-        else txtResults.setText(listVoyagesResults2.size() + " séjours peuvent vous satisfaire");
+        if (listVoyagesResults2.size() == 0) txtResults.setText("Aucun voyage...");
+        else txtResults.setText(listVoyagesResults2.size() + " voyages peuvent vous satisfaire");
         imgMap.setVisible(listVoyagesResults2.size() != 0);
         scrollPaneResults.setVisible(listVoyagesResults2.size() != 0);
     }
@@ -211,7 +212,7 @@ public ArrayList<Voyage> searchVoyagesSansFiltre(){
                 File file = new File("src/application/assets/images/ville/" + listVoyagesResults2.get(startIndex + i).getVille() + ".png");
                 Image image = new Image(file.toURI().toString());
                 iv.setImage(image);
-                titre.setText(listVoyagesResults2.get(startIndex + i).getContreparties() + " à " + listVoyagesResults2.get(startIndex + i).getVille());
+                titre.setText(listVoyagesResults2.get(startIndex + i).getContreparties() + " � " + listVoyagesResults2.get(startIndex + i).getVille());
                 contrepartie.setText(listVoyagesResults2.get(startIndex + i).getContreparties());
                 logement.setText(listVoyagesResults2.get(startIndex + i).getType());
                 heures.setText(listVoyagesResults2.get(startIndex + i).getHeure() + " h/j");

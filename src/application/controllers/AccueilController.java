@@ -10,7 +10,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import application.controllers.SearchController;
@@ -54,7 +57,7 @@ public class AccueilController implements Initializable{
 	private ArrayList<Voyage> listVoyagesResults;
 
 	@FXML private ImageView img1,img2,img3,img4,img5;
-	int idUtilisateurConnecte = 1;
+	int idUtilisateurConnecte = 13;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -73,7 +76,6 @@ public class AccueilController implements Initializable{
 
 		// get all voyages
 		listAllVoyages = this.getAllVoyages();
-		System.out.println("dans initialize ");
 
 		// init datepickers
 		LocalDate today = LocalDate.now();
@@ -144,7 +146,13 @@ public class AccueilController implements Initializable{
 		}
 
 		ArrayList<Voyage> results = new ArrayList<Voyage>();
-
+		DateTimeFormatter df = new DateTimeFormatterBuilder()
+			    // case insensitive to parse JAN and FEB
+			    .parseCaseInsensitive()
+			    // add pattern
+			    .appendPattern("dd/MM/yyyy")
+			    // create formatter (use English Locale to parse month names)
+			    .toFormatter(Locale.FRENCH);
 		for (Voyage v: listAllVoyages){
 			if ((v.getVille().contains(txtRecherche.getText()))
 					&& (debut_sejour.getValue() == null || !debut_sejour.getValue().isBefore(LocalDate.parse(v.getDateArrivee())) )
@@ -186,7 +194,7 @@ public class AccueilController implements Initializable{
 			Stage settStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			settStage.setScene(AccueilScene);
 			settStage.show();
-			System.out.println("Vous Ãªtes sur la page d'accueil");
+			System.out.println("Vous êtes sur la page d'accueil");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -216,8 +224,18 @@ public class AccueilController implements Initializable{
 	}
 	
 
-	public void onMenuButtonProfilClicked(ActionEvent event) {
+	public void onMenuButtonProfilClicked(ActionEvent event) throws IOException {
 		
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ProfilVoyageur.fxml"));
+		Parent root = (Parent) loader.load();
+		Stage stage = new Stage();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		
+		ProfilVoyageurController secController = loader.getController();
+		secController.idUtilisateur = idUtilisateurConnecte;
+		secController.miseEnPlaceProfil();
 	}
 	public void onMenuButtonMessagerieClicked(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(Main.class.getResource("views/ListeDiscussions.fxml"));

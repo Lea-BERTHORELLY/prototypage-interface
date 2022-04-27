@@ -27,7 +27,6 @@
             <Label layoutX="14.0" layoutY="15.0" text="Contact : adeona@woofing.fr" />
          </children>
       </Pane>
-      <Button fx:id="hote" layoutX="1064.0" layoutY="26.0" mnemonicParsing="false" styleClass="lightBtn" stylesheets="@../styles/styles.css" text="Devenir hôte" />
       <Pane layoutX="149.0" layoutY="77.0" prefHeight="72.0" prefWidth="1000.0" styleClass="searchPane" stylesheets="@../styles/styles.css">
          <children>
             <DatePicker fx:id="debut_sejour2" layoutX="340.0" layoutY="23.0" promptText="Début du séjour" stylesheets="@../styles/styles.css" />

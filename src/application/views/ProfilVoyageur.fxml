@@ -41,7 +41,7 @@
             </Text>
             <Text fx:id="textPays" layoutX="248.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="France" />
             <Text fx:id="textVille" layoutX="248.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ville de france" />
-            <Button layoutX="538.0" layoutY="263.0" mnemonicParsing="false" onAction="#miseEnPlaceProfil" text="Mise en place profil (à supprimer après)" />
+           
          </children>
       </AnchorPane>
    </children>
